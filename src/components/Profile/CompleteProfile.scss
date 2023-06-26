@@ -1,0 +1,59 @@
+form {
+    overflow: auto;
+    max-height: 67vh;
+}
+.d_body {
+    .details_p {
+        width: 100%;
+
+        input {
+            width: 100%;
+            border: 1px solid rgb(214, 217, 220);
+            outline: none;
+
+            &:focus-within {
+                border: 1px solid #ff5c35;
+            }
+            &::placeholder {
+                color: rgb(186, 185, 185);
+            }
+        }
+    }
+}
+
+.aggre {
+    display: flex;
+    margin-top: 0.5rem;
+    padding-left: 10px;
+    gap: 5px;
+    color: lightseagreen;
+}
+.button {
+    margin: 10px;
+    margin-left: 10px;
+    .btn {
+        outline: none;
+        padding: 7px;
+        font-weight: bold;
+        cursor: pointer;
+        font-size: 1.1rem;
+        background: orange;
+        border-radius: 2.5px;
+        border: none;
+        color: white;
+        transition: all 0.5s ease;
+    }
+    .btn-disabled {
+        outline: none;
+        padding: 7px;
+        font-weight: bold;
+        cursor: not-allowed;
+        opacity: 0.4;
+        font-size: 1.1rem;
+        background: orange;
+        border-radius: 2.5px;
+        border: none;
+        color: white;
+        transition: all 0.5s ease;
+    }
+}

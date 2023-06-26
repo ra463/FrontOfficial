@@ -1,0 +1,75 @@
+.sidebar {
+    background-color: rgb(247, 247, 247);
+    height: 100vh;
+    border-right: 1px solid rgb(214, 217, 220);
+    width: 20rem;
+    
+    .upper {
+        display: flex;
+        padding: 0.4rem 0;
+        gap: 10px;
+        padding-left: 1rem;
+        align-items: center;
+        font-size: 2rem;
+        font-weight: bold;
+        color: #ff5c35;
+        border-bottom: 1px solid rgb(214, 217, 220);
+        svg {
+            cursor: pointer;
+            background-color: rgba(235, 234, 234, 0.596);
+            border-radius: 50%;
+            padding: 3px;
+            // &:hover{
+            //     background-color: rgba(235, 234, 234, 0.596);
+            //     border-radius: 50%;
+            // }
+        }
+    }
+    .upper1 {
+        padding: 0.65rem 0;
+        padding-left: 1rem;
+    }
+    .lower {
+        display: flex;
+        flex-direction: column;
+        margin-top: 1rem;
+        font-size: 1.2rem;
+        font-weight: bold;
+
+        div {
+            svg {
+                font-size: 1.3rem;
+            }
+            a {
+                display: flex;
+                align-items: center;
+                padding: 10px 15px;
+                gap: 10px;
+                width: 100%;
+            }
+            display: flex;
+            align-items: center;
+            border-radius: 3px;
+            color: rgba(0, 0, 0, 0.776);
+            margin: 0 7px;
+            margin-bottom: 5px;
+            gap: 10px;
+
+            &:hover {
+                background: var(--bg-secondary);
+                cursor: pointer;
+            }
+        }
+
+        .active {
+            background: #ff5c35;
+            color: white;
+            cursor: pointer;
+
+            &:hover {
+                background: #ff5c35;
+                cursor: pointer;
+            }
+        }
+    }
+}

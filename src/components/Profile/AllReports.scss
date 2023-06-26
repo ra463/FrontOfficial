@@ -1,0 +1,76 @@
+.all_report {
+    .all_head {
+        margin: 0 1rem;
+        margin-top: -4rem;
+        background-color: white;
+        padding: 0.8rem;
+        border-radius: 3.5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .all_r {
+        display: flex;
+        flex-direction: column;
+        margin: 0.5rem 1rem;
+
+        .repo {
+            display: flex;
+            flex-direction: row;
+            padding: 7px 15px;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 3.5px;
+            margin-top: 10px;
+            border: 0.5px solid rgb(214, 217, 220);
+
+            &:nth-child(1) {
+                margin-top: 0.6rem;
+            }
+
+            .basic_d {
+                .r_name {
+                    font-size: 1.15rem;
+                    font-weight: bold;
+                }
+                .container {
+                    font-size: 0.8rem;
+                    color: rgb(96, 99, 102);
+                    gap: 10px;
+                }
+            }
+            .link {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+
+                a {
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                    border-radius: 2px;
+                    border: 1px solid rgb(214, 217, 220);
+                    padding: 2px 5px;
+                    font-weight: bold;
+                    &:nth-child(1) {
+                        color: #ff5c35;
+                    }
+
+                    &:nth-child(2) {
+                        color: #1a73e8;
+                    }
+
+                    &:hover {
+                        background-color: rgba(245, 245, 245, 0.808);
+                    }
+                }
+            }
+
+            &:hover {
+                background-color: rgba(245, 245, 245, 0.808);
+                transition: 0.1s;
+                transform: scale(1.005);
+            }
+        }
+    }
+}
