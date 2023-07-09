@@ -208,3 +208,16 @@
         }
     }
 }
+
+@media (max-width: 450px) {
+    .sidebar_mob {
+        display: block;
+        .upper {
+            padding-top: 0.65rem;
+            padding-bottom: 0.65rem;
+        }
+        .lower2{
+            top: 3.3rem;
+        }
+    }
+}

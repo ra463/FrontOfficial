@@ -16,6 +16,7 @@ import {
 import { Link, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import useClickOutside from "../../utils/ClickOutSide";
+import { BiHomeAlt } from "react-icons/bi";
 
 const Sidebar = ({ page }) => {
   const { user } = useSelector((state) => state.user);
@@ -67,6 +68,11 @@ const Sidebar = ({ page }) => {
             <div className={location.pathname === "/profile" ? "active" : ""}>
               <Link to="/profile">
                 <MdSwitchAccount />
+              </Link>
+            </div>
+            <div>
+              <Link to="/">
+                <BiHomeAlt />
               </Link>
             </div>
 
@@ -129,6 +135,11 @@ const Sidebar = ({ page }) => {
             <div className={location.pathname === "/profile" ? "active" : ""}>
               <Link to="/profile">
                 <MdSwitchAccount /> Profile
+              </Link>
+            </div>
+            <div>
+              <Link to="/">
+                <BiHomeAlt /> Home
               </Link>
             </div>
             {user.role === "user" && (
@@ -201,6 +212,11 @@ const Sidebar = ({ page }) => {
                 <MdSwitchAccount />
               </Link>
             </div>
+            <div>
+              <Link to="/">
+                <BiHomeAlt />
+              </Link>
+            </div>
 
             {user.role === "user" && (
               <>
@@ -241,64 +257,71 @@ const Sidebar = ({ page }) => {
         {showMenu && (
           <div className="box1" ref={close}>
             <div className="lower2">
-            {user.role === "user" && (
-              <div
-                className={
-                  location.pathname === "/submitreport" ? "active" : ""
-                }
-              >
-                <Link to="/submitreport">
-                  <CgNotes /> Submit Report
+              {user.role === "user" && (
+                <div
+                  className={
+                    location.pathname === "/submitreport" ? "active" : ""
+                  }
+                >
+                  <Link to="/submitreport">
+                    <CgNotes /> Submit Report
+                  </Link>
+                </div>
+              )}
+              {user.role === "admin" && (
+                <div>
+                  <Link to="/admin/dashboard">
+                    <MdOutlineDashboard /> Dashboard
+                  </Link>
+                </div>
+              )}
+              <div className={location.pathname === "/profile" ? "active" : ""}>
+                <Link to="/profile">
+                  <MdSwitchAccount /> Profile
                 </Link>
               </div>
-            )}
-            {user.role === "admin" && (
               <div>
-                <Link to="/admin/dashboard">
-                  <MdOutlineDashboard /> Dashboard
+                <Link to="/">
+                  <BiHomeAlt /> Home
                 </Link>
               </div>
-            )}
-            <div className={location.pathname === "/profile" ? "active" : ""}>
-              <Link to="/profile">
-                <MdSwitchAccount /> Profile
-              </Link>
-            </div>
-            {user.role === "user" && (
-              <>
-                <div>
-                  <Link to="/missingreport">
-                    <MdOutlineReportGmailerrorred /> Report Missing Person
+              {user.role === "user" && (
+                <>
+                  <div>
+                    <Link to="/missingreport">
+                      <MdOutlineReportGmailerrorred /> Report Missing Person
+                    </Link>
+                  </div>
+                  <div>
+                    <Link to="/foundmissing">
+                      <CgSearchFound /> Report Found Person
+                    </Link>
+                  </div>
+                </>
+              )}
+              {user.role === "user" && (
+                <div
+                  className={
+                    page === "viewreport" || location.pathname === "/allreports"
+                      ? "active"
+                      : ""
+                  }
+                >
+                  <Link to="/allreports">
+                    <MdCallMade /> All Reports
                   </Link>
                 </div>
-                <div>
-                  <Link to="/foundmissing">
-                    <CgSearchFound /> Report Found Person
-                  </Link>
-                </div>
-              </>
-            )}
-            {user.role === "user" && (
+              )}
               <div
                 className={
-                  page === "viewreport" || location.pathname === "/allreports"
-                    ? "active"
-                    : ""
+                  location.pathname === "/notifications" ? "active" : ""
                 }
               >
-                <Link to="/allreports">
-                  <MdCallMade /> All Reports
+                <Link to="/notifications">
+                  <MdNotifications /> Notifications
                 </Link>
               </div>
-            )}
-            <div
-              className={location.pathname === "/notifications" ? "active" : ""}
-            >
-              <Link to="/notifications">
-                <MdNotifications /> Notifications
-              </Link>
             </div>
-          </div>
           </div>
         )}
       </div>

@@ -180,4 +180,14 @@
             }
         }
     }
+
+    @media (max-width: 380px) {
+        .p_head_left {
+            font-size: 1rem;
+
+            &::first-letter {
+                font-size: 1.5rem;
+            }
+        }
+    }
 }

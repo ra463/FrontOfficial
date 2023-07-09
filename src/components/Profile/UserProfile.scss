@@ -227,10 +227,35 @@
             .more_details {
                 .more_d {
                     .details {
-                        .d_body{
+                        .d_body {
                             display: flex;
                             flex-direction: column;
                         }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 450px) {
+        .p_top {
+            .more_details {
+                margin: 0;
+
+                .more_d {
+                    .more_p {
+                        margin-left: 10px;
+                        margin-right: 10px;
+
+                        .more{
+                            a{
+                                margin: 0.3rem 1rem;
+                            }
+                        }
+                    }
+                    .details {
+                        margin-left: 10px;
+                        margin-right: 10px;
                     }
                 }
             }
