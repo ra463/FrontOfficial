@@ -46,14 +46,18 @@ const UserProfile = () => {
                     <AiFillSetting />
                   </div>
                 </div>
-                <div className="more">
-                  <Link to="/missingreport">
-                    <p style={{ color: "red" }}>Report Missing Person</p>
-                  </Link>
-                  <Link to="/foundmissing">
-                    <p style={{ color: "green" }}>Found Missing Person</p>
-                  </Link>
-                </div>
+                {user.role === "user" && (
+                  <>
+                    <div className="more">
+                      <Link to="/missingreport">
+                        <p style={{ color: "red" }}>Report Missing Person</p>
+                      </Link>
+                      <Link to="/foundmissing">
+                        <p style={{ color: "green" }}>Found Missing Person</p>
+                      </Link>
+                    </div>
+                  </>
+                )}
               </div>
               <div className="details">
                 {visible === 0 && (

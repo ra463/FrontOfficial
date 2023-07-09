@@ -25,6 +25,7 @@ import AllAdminReports from "./components/Admin/AllAdminReports";
 import AllFoundReports from "./components/Admin/AllFoundReports";
 import AllMissingReports from "./components/Admin/AllMissingReports";
 import AllUsers from "./components/Admin/AllUsers";
+import ActiveAccount from "./components/Home/ActiveAccount";
 
 function App() {
   const { isAuthenticated, message, error, user } = useSelector(
@@ -59,6 +60,9 @@ function App() {
           path="/signup"
           element={!isAuthenticated ? <Register /> : <Navigate to="/profile" />}
         />
+
+        <Route path="/activate/:token" element={<ActiveAccount />} />
+
         <Route
           path="/login"
           element={!isAuthenticated ? <Login /> : <Navigate to="/profile" />}

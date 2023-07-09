@@ -143,6 +143,7 @@ const FoundMissing = () => {
                 </p>
 
                 {user.adhaar &&
+                user?.verified === true &&
                 user.phone &&
                 user.address &&
                 user.city &&
@@ -180,7 +181,7 @@ const FoundMissing = () => {
                   </>
                 ) : (
                   <p className="para_m" style={{ color: "darkorange" }}>
-                    Complete your Profile to Submit the Report.
+                    Complete your Profile and verify your email to Submit the Report.
                   </p>
                 )}
               </div>

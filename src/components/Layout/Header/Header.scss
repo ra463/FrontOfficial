@@ -3,7 +3,6 @@
   width: 100%;
   top: 0px;
   transition: 0.3s linear;
-
 }
 .hidden {
   height: 60px;
@@ -21,7 +20,7 @@ header {
   width: 100%;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   display: grid;
-  grid-template-columns: 2fr 2fr;
+  grid-template-columns: 1.5fr 2fr;
   color: var(--color-primary);
   padding: 0 20px;
 
@@ -72,6 +71,10 @@ header {
     }
   }
 
+  .menu {
+    display: none;
+  }
+
   .header_right {
     display: flex;
     align-items: center;
@@ -94,6 +97,114 @@ header {
       &:hover {
         background-color: #ff5b32d3;
         color: white;
+      }
+    }
+  }
+
+  .header_right_small {
+    background: #434f5a;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    transition: all 0.3s ease-in-out;
+
+    .close {
+      text-align: right;
+      margin-right: 10px;
+      padding: 10px;
+      cursor: pointer;
+
+      svg {
+        font-size: 2rem;
+        color: white;
+      }
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 20px;
+      transition: all 0.3s ease-in-out;
+
+      a {
+        background: #ff5c35;
+        font-weight: bold;
+        padding: 5px 10px;
+        border-radius: 5px;
+
+        p {
+          color: white;
+        }
+      }
+
+      .login {
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        background-color: #ff5c35;
+        color: white;
+
+        &:hover {
+          background-color: #ff5b32d3;
+          color: white;
+        }
+      }
+    }
+  }
+
+  .more_padding{
+    margin-top: 5rem;
+  }
+}
+
+@media (max-width: 810px) {
+  header {
+    padding: 0 10px;
+    .header_right {
+      gap: 15px;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  header {
+    grid-template-columns: 1fr 2fr;
+    padding: 0 5px;
+
+    .header_left {
+      .search {
+        display: none;
+      }
+    }
+
+    .header_right {
+      gap: 12px;
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+
+    .header_right {
+      display: none;
+    }
+    .menu {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      cursor: pointer;
+
+      svg {
+        font-size: 1.5rem;
       }
     }
   }

@@ -7,7 +7,7 @@
         width: 100%;
         height: 100vh;
         overflow: auto;
-        
+
         .back {
             height: 20vh;
             background-image: url("../../../public/back.jpg");
@@ -176,6 +176,60 @@
                                 border: 1px solid rgb(214, 217, 220);
                                 cursor: text;
                             }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .p_top {
+            .more_details {
+                .more_d {
+                    display: flex;
+                    flex-direction: column;
+
+                    .more_p {
+                        .more {
+                            width: 100%;
+                            a {
+                                justify-content: center;
+                            }
+                        }
+                    }
+
+                    .details {
+                        margin-top: 1rem;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 690px) {
+        .p_top {
+            .more_details {
+                .more_d {
+                    .details {
+                        overflow-x: auto;
+                        .d_head {
+                            overflow-x: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 520px) {
+        .p_top {
+            .more_details {
+                .more_d {
+                    .details {
+                        .d_body{
+                            display: flex;
+                            flex-direction: column;
                         }
                     }
                 }

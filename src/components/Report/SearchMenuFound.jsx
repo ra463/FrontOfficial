@@ -116,7 +116,7 @@ const SearchMenuFound = ({ setShowSerchMenu }) => {
       )}
 
       {searchResult && searchResult?.length > 0 && (
-        <div className="filter">
+        <div className="filter" style={{marginLeft:"10px"}}>
           <div className="total">
             <h5>Searched Result: {searchResult?.length}</h5>
           </div>

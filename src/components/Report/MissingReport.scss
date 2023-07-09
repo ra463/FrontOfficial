@@ -551,4 +551,80 @@
             }
         }
     }
+
+    @media (max-width: 1000px) {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    @media (max-width: 880px) {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    @media (max-width: 750px) {
+        .report_head {
+            .search_btn {
+                display: none;
+            }
+        }
+        .fill_form {
+            display: flex;
+            flex-direction: column-reverse;
+
+            .serch_div {
+                padding-bottom: 1rem;
+            }
+        }
+    }
+
+    @media (max-width: 550px) {
+        .report_head{
+            h1{
+                text-align: center;
+            }
+        }
+        .fill_form {
+            .form_div {
+                form {
+                    .place_1 {
+                        flex-direction: column;
+                        gap: 10px;
+                        div {
+                            width: 100%;
+                        }
+                    }
+                    .place_2 {
+                        flex-direction: column;
+                        gap: 10px;
+                        div {
+                            width: 100%;
+                        }
+                    }
+                    .place_3 {
+                        flex-direction: column;
+                        gap: 10px;
+                        div {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 415px) {
+        .fill_form{
+            .form_div{
+                h2{
+                    padding: 0 0.5rem;
+                }
+            }
+        }
+        .report_head {
+            p {
+                width: 100%;
+            }
+        }
+    }
 }

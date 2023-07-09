@@ -1,37 +1,48 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import Header from "../Layout/Header/Header";
 import { IoPerson } from "react-icons/io5";
 import "./Home.scss";
-import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { server } from "../../redux/store";
-import { toast } from "react-hot-toast";
-import PulseLoader from "react-spinners/PulseLoader";
+import toast from "react-hot-toast";
+import ClipLoader from "react-spinners/ClipLoader";
 
-const Home = () => {
-  const { isAuthenticated, user } = useSelector((state) => state.user);
-  const { message, error, loading } = useSelector((state) => state.resend);
+const ActiveAccount = () => {
+  const { error, message, loading } = useSelector((state) => state.activate);
 
+  const { token } = useParams();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  const reSendVerificationCode = async () => {
+  useEffect(() => {
+    verifyAccount();
+  }, []);
+
+  const verifyAccount = async () => {
     try {
-      dispatch({ type: "reSendMailRequest" });
+      dispatch({ type: "sendMailRequest" });
 
       const { data } = await axios.post(
-        `${server}/resend`,
-        {},
+        `${server}/activate`,
+        { token },
         {
           withCredentials: true,
         }
       );
 
-      dispatch({ type: "reSendMailSuccess", payload: data.message });
+      dispatch({ type: "sendMailSuccess", payload: data.message });
+
+      setTimeout(() => {
+        navigate("/");
+      }, 5000);
     } catch (error) {
-      dispatch({
-        type: "reSendMailFail",
-        payload: error.response.data.message,
-      });
+      dispatch({ type: "sendMailFail", payload: error.response.data.message });
+      setTimeout(() => {
+        navigate("/");
+      }, 5000);
     }
   };
 
@@ -45,35 +56,30 @@ const Home = () => {
       toast.success(message);
       dispatch({ type: "clearMessage" });
     }
-  }, [dispatch, message, error]);
+  }, [dispatch, error, message]);
 
-  return (
+  return loading ? (
+    <div className="loading">
+      <ClipLoader color="#ff5c35" size={150} />
+    </div>
+  ) : (
     <div>
       <Header />
       <div className="home">
         <div className="box">
-          {isAuthenticated && user?.verified === false && (
-            <div className="warning">
-              <h2>Verify Your Email</h2>
-              <p>
-                Please verify your email address to continue using our services.
-                If you have not received the verification email, please check
-                your spam folder or click the button below to resend the
-                verification email.
-                <span style={{ color: "#ff5c35" }}>
-                  You can Submit your report only when your profile is completed
-                  & Email is verified.
-                </span>
-              </p>
-              <p onClick={() => reSendVerificationCode()} className="btn">
-                {loading ? (
-                  <PulseLoader color="#fff" size={5} />
-                ) : (
-                  <span>Send Email</span>
-                )}
-              </p>
-            </div>
-          )}
+          <div className="warning">
+            {error && (
+              <h2 style={{ color: "red" }}>Some Problem has Occured.</h2>
+            )}
+            {message && (
+              <h2 style={{ color: "green" }}>Email Verified Successfully</h2>
+            )}
+            <p>
+              <span style={{ color: "#ff5c35" }}>
+                You will be automatically redirected to home page in 5 seconds.
+              </span>
+            </p>
+          </div>
           <div className="container">
             <div className="image">
               <img src="/missing.jpg" alt="" />
@@ -172,7 +178,4 @@ const Home = () => {
   );
 };
 
-//This is to check the first push req.
-//this is 2 push to check
-
-export default Home;
+export default ActiveAccount;

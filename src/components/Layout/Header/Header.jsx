@@ -3,11 +3,14 @@ import { Link } from "react-router-dom";
 import { BiSearchAlt } from "react-icons/bi";
 import "./Header.scss";
 import { useSelector } from "react-redux";
+import { AiOutlineMenu } from "react-icons/ai";
+import { MdOutlineClose } from "react-icons/md";
 
 const Header = () => {
   const { user } = useSelector((state) => state.user);
   const [show, setShow] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [showMenu, setShowMenu] = useState(false);
 
   const controlNavbar = () => {
     if (typeof window !== "undefined") {
@@ -19,7 +22,7 @@ const Header = () => {
         setShow(false);
       }
 
-      // remember current page location to use in the next move
+      // remember current page location to use in the next mov
       setLastScrollY(window.scrollY);
     }
   };
@@ -72,9 +75,11 @@ const Header = () => {
         <Link to="/">
           <p>Feed</p>
         </Link>
-        <Link to="/missingreport">
-          <p>Report Missing Person</p>
-        </Link>
+        {user?.role === "user" && (
+          <Link to="/missingreport">
+            <p>Report Missing Person</p>
+          </Link>
+        )}
         {user ? (
           <Link to="/profile">
             <p>Profile</p>
@@ -110,6 +115,64 @@ const Header = () => {
           ></div>
         </i>
       </div>
+      <div className="menu">
+        <i
+          className="fa-solid fa-language"
+          style={{
+            position: "relative",
+            overflow: "hidden",
+            fontSize: "1.5rem",
+            color: "#2e475d",
+          }}
+        >
+          <div
+            id="google_translate_element"
+            style={{
+              opacity: 0,
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              marginTop: "20%",
+              transform: `translateX(-50%) translateY(-50%)`,
+            }}
+          ></div>
+        </i>
+        <AiOutlineMenu onClick={() => setShowMenu(true)} />
+      </div>
+      {showMenu && (
+        <div className={`header_right_small ${show && "more_padding"}`}>
+          <div className="close" onClick={() => setShowMenu(false)}>
+            <MdOutlineClose />
+          </div>
+          <div className="links">
+            <Link onClick={() => setShowMenu(false)} to="/">
+              <p>Home</p>
+            </Link>
+            <Link onClick={() => setShowMenu(false)} to="/">
+              <p>Feed</p>
+            </Link>
+            {user?.role === "user" && (
+              <Link to="/missingreport">
+                <p>Report Missing Person</p>
+              </Link>
+            )}
+            {user ? (
+              <Link to="/profile">
+                <p>Profile</p>
+              </Link>
+            ) : (
+              <>
+                <Link className="login" to="/login">
+                  <p>LogIn</p>
+                </Link>
+                <Link className="login" to="/signup">
+                  <p>SignUp</p>
+                </Link>
+              </>
+            )}
+          </div>
+        </div>
+      )}
     </header>
   );
 };

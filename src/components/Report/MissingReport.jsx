@@ -143,6 +143,7 @@ function Report() {
 
                 {user.adhaar &&
                 user.phone &&
+                user?.verified === true &&
                 user.address &&
                 user.city &&
                 user.state &&

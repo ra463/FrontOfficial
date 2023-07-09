@@ -1,11 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import {
+  activateReducer,
   completeProfileReducer,
   deleteUserReducer,
   getAllMissingandFoundReportReducer,
   getAllUserReducer,
   getSingleUserReducer,
   logoutReducer,
+  reSendReducer,
   updateRoleReducer,
   userReducer,
 } from "./reducers/userReducer";
@@ -62,6 +64,8 @@ const store = configureStore({
     deleteuser: deleteUserReducer,
     singleuser: getSingleUserReducer,
     updatestatus: updateStatusReducer,
+    activate: activateReducer,
+    resend: reSendReducer,
   },
 });
 

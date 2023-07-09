@@ -103,4 +103,30 @@
             }
         }
     }
+
+    @media (max-width: 1000px) {
+        .report_box {
+            width: 70%;
+        }
+    }
+
+    @media (max-width: 700px) {
+        .report_box {
+            width: 85%;
+        }
+    }
+
+    @media (max-width: 550px) {
+        .report_box {
+            width: 95%;
+
+            .report_body {
+                .first {
+                    .grp {
+                        flex-direction: column;
+                    }
+                }
+            }
+        }
+    }
 }

@@ -26,11 +26,13 @@
         .aggre {
             display: flex;
             margin-top: 0.5rem;
+            padding-left: 0;
             gap: 5px;
             color: lightseagreen;
         }
         .button {
             margin-top: 0.5rem;
+            padding-left: 0;
             .btn {
                 outline: none;
                 padding: 7px;

@@ -37,6 +37,14 @@ a {
   border-radius: 0;
 }
 
+.loading{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 :root {
   --bg-primary: #fff;
   --bg-secondary: #f0f2f5;

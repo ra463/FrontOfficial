@@ -57,6 +57,52 @@ export const userReducer = createReducer(
   }
 );
 
+export const activateReducer = createReducer(
+  {},
+  {
+    sendMailRequest: (state) => {
+      state.loading = true;
+    },
+    sendMailSuccess: (state, action) => {
+      state.loading = false;
+      state.message = action.payload;
+    },
+    sendMailFail: (state, action) => {
+      state.loading = false;
+      state.error = action.payload;
+    },
+    clearError: (state) => {
+      state.error = null;
+    },
+    clearMessage: (state) => {
+      state.message = null;
+    },
+  }
+);
+
+export const reSendReducer = createReducer(
+  {},
+  {
+    reSendMailRequest: (state) => {
+      state.loading = true;
+    },
+    reSendMailSuccess: (state, action) => {
+      state.loading = false;
+      state.message = action.payload;
+    },
+    reSendMailFail: (state, action) => {
+      state.loading = false;
+      state.error = action.payload;
+    },
+    clearError: (state) => {
+      state.error = null;
+    },
+    clearMessage: (state) => {
+      state.message = null;
+    },
+  }
+);
+
 export const logoutReducer = createReducer(
   {},
   {
