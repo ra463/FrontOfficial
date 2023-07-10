@@ -8,14 +8,33 @@
     justify-content: space-between;
     padding: 0.8rem 1rem;
 
-    .download{
-        a{
+    .download {
+        a {
             text-decoration: none;
             padding: 5px 10px;
             color: #4a4a4a;
             background-color: #f2f2f2;
             border: 1px solid #4a4a4a;
             border-radius: 5px;
+        }
+    }
+
+    @media (max-width: 600px) {
+        margin-top: -8rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    @media (max-width: 450px) {
+        font-size: 0.8rem;
+        align-items: center;
+
+        .download {
+            a {
+                padding: 5px;
+                border-radius: 3px;
+            }
         }
     }
 }
@@ -27,6 +46,9 @@
     margin-bottom: -0.8rem;
     max-height: 70vh;
     overflow: auto;
+    border: 1px solid #d6d9dc;
+    padding: 5px 10px;
+    border-radius: 5px;
 
     .first {
         width: 100%;
@@ -128,6 +150,21 @@
                     border: 1px solid rgb(214, 217, 220);
                     cursor: text;
                 }
+            }
+        }
+    }
+
+    @media (max-height: 950px) {
+        flex-direction: column;
+        background: aliceblue;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+
+    @media (max-height: 450px) {
+        .first {
+            .grp {
+                flex-direction: column;
             }
         }
     }

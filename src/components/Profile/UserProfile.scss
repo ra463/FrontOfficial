@@ -245,7 +245,7 @@
                     .more_p {
                         margin-left: 10px;
                         margin-right: 10px;
-                        margin-top: -10rem;
+                        margin-top: -8rem;
 
                         .more{
                             a{
@@ -260,22 +260,6 @@
                         .d_head {
                             overflow-x: auto;
                         }
-                    }
-                }
-            }
-        }
-    }
-
-    @media (max-width:380px){
-        .p_top {
-            .more_details {
-                margin: 0;
-
-                .more_d {
-                    .more_p {
-                        margin-left: 10px;
-                        margin-right: 10px;
-                        margin-top: -8rem;
                     }
                 }
             }
