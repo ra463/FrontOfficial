@@ -166,6 +166,7 @@
     }
 
     @media (max-width: 450px) {
+        height: 7vh;
         .p_head_left {
             font-size: 1.2rem;
 
@@ -174,8 +175,8 @@
             }
         }
 
-        .user_profile_head{
-            .svg{
+        .user_profile_head {
+            .svg {
                 display: none;
             }
         }

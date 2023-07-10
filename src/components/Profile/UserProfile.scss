@@ -212,7 +212,6 @@
             .more_details {
                 .more_d {
                     .details {
-                        overflow-x: auto;
                         .d_head {
                             overflow-x: auto;
                         }
@@ -246,6 +245,7 @@
                     .more_p {
                         margin-left: 10px;
                         margin-right: 10px;
+                        margin-top: -10rem;
 
                         .more{
                             a{
@@ -256,6 +256,10 @@
                     .details {
                         margin-left: 10px;
                         margin-right: 10px;
+
+                        .d_head {
+                            overflow-x: auto;
+                        }
                     }
                 }
             }

@@ -25,7 +25,7 @@
     .lower {
         display: flex;
         flex-direction: column;
-        margin-top: 1rem;
+        margin-top: 0.3rem;
         font-size: 1.2rem;
         font-weight: bold;
 
@@ -202,8 +202,12 @@
     .sidebar_mob {
         display: block;
 
+        .upper{
+            height: 7vh;
+        }
+
         .lower2{
-            top: 2.5rem;
+            top: 3.7rem;
         }
     }
 
