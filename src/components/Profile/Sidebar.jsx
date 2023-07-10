@@ -37,7 +37,7 @@ const Sidebar = ({ page }) => {
           width: !showSidebar ? "4rem" : "20rem",
         }}
       >
-        <div className={showSidebar ? "upper" : "upper upper1"}>
+        <div className="upper">
           {showSidebar ? (
             <CgMenuLeftAlt onClick={() => setShowSidebar(false)} />
           ) : (
@@ -46,7 +46,7 @@ const Sidebar = ({ page }) => {
           {showSidebar && <Link to="/">FiNDER</Link>}
         </div>
         {!showSidebar && (
-          <div className="lower lower1">
+          <div className="lower">
             {user.role === "user" && (
               <div
                 className={
@@ -188,7 +188,7 @@ const Sidebar = ({ page }) => {
           )}
         </div>
         {!showMenu && (
-          <div className="lower lower1">
+          <div className="lower">
             {user.role === "user" && (
               <div
                 className={

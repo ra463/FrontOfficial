@@ -6,7 +6,7 @@
 
     .upper {
         display: flex;
-        padding: 0.4rem 0;
+        height: 8.5vh;
         gap: 10px;
         padding-left: 1rem;
         align-items: center;
@@ -19,16 +19,9 @@
             background-color: rgba(235, 234, 234, 0.596);
             border-radius: 50%;
             padding: 3px;
-            // &:hover{
-            //     background-color: rgba(235, 234, 234, 0.596);
-            //     border-radius: 50%;
-            // }
         }
     }
-    .upper1 {
-        padding: 0.65rem 0;
-        padding-left: 1rem;
-    }
+
     .lower {
         display: flex;
         flex-direction: column;
@@ -85,14 +78,14 @@
     .sidebar_mob {
         display: block;
         background-color: rgb(247, 247, 247);
-        height: 100vh;
+        height:100vh;
         border-right: 1px solid rgb(214, 217, 220);
         position: relative;
         width: 4.7rem;
 
         .upper {
             display: flex;
-            padding: 0.45rem 0;
+            height: 8.5vh;
             gap: 10px;
             padding-left: 1rem;
             align-items: center;
@@ -107,14 +100,10 @@
                 padding: 3px;
             }
         }
-        .upper1 {
-            padding: 0.65rem 0;
-            padding-left: 1rem;
-        }
         .lower {
             display: flex;
             flex-direction: column;
-            margin-top: 1rem;
+            margin-top: 0.3rem;
             font-size: 1.2rem;
             font-weight: bold;
 
@@ -161,9 +150,9 @@
             font-size: 1.2rem;
             font-weight: bold;
             position: absolute;
-            padding-top: 1rem;
+            padding-top: 0.3rem;
             background-color: rgb(247, 247, 247);
-            height: 95vh;
+            height: 91.4vh;
             border-right: 1px solid rgb(214, 217, 220);
             border-top: 1px solid rgb(214, 217, 220);
             transition: all 0.3s ease-in-out;
@@ -212,12 +201,10 @@
 @media (max-width: 450px) {
     .sidebar_mob {
         display: block;
-        .upper {
-            padding-top: 0.65rem;
-            padding-bottom: 0.65rem;
-        }
+
         .lower2{
-            top: 3.3rem;
+            top: 2.5rem;
         }
     }
+
 }
