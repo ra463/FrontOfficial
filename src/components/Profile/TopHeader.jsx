@@ -65,6 +65,69 @@ const TopHeader = ({ page }) => {
           onClick={() => setShowSidebar((prev) => !prev)}
         />
         <p>{user.firstname}'s Profile</p>
+        <div className={showSidebar ? "lower1 lower" : "lower"}>
+          {user.role === "user" && (
+            <div
+              className={location.pathname === "/submitreport" ? "active" : ""}
+            >
+              <Link to="/submitreport">
+                <CgNotes /> Submit Report
+              </Link>
+            </div>
+          )}
+          {user.role === "admin" && (
+            <div>
+              <Link to="/admin/dashboard">
+                <MdOutlineDashboard /> Dashboard
+              </Link>
+            </div>
+          )}
+          <div className={location.pathname === "/profile" ? "active" : ""}>
+            <Link to="/profile">
+              <MdSwitchAccount /> Profile
+            </Link>
+          </div>
+          <div>
+            <Link to="/">
+              <BiHomeAlt /> Home
+            </Link>
+          </div>
+
+          {user.role === "user" && (
+            <>
+              <div>
+                <Link to="/missingreport">
+                  <MdOutlineReportGmailerrorred /> Report Missing Person
+                </Link>
+              </div>
+              <div>
+                <Link to="/foundmissing">
+                  <CgSearchFound /> Report Found Person
+                </Link>
+              </div>
+            </>
+          )}
+          {user.role === "user" && (
+            <div
+              className={
+                page === "viewreport" || location.pathname === "/allreports"
+                  ? "active"
+                  : ""
+              }
+            >
+              <Link to="/allreports">
+                <MdCallMade /> All Reports
+              </Link>
+            </div>
+          )}
+          <div
+            className={location.pathname === "/notifications" ? "active" : ""}
+          >
+            <Link to="/notifications">
+              <MdNotifications /> Notifications
+            </Link>
+          </div>
+        </div>
       </div>
       <div className="user_profile_head" ref={log}>
         <Link to="/notifications" className="svg">
@@ -143,67 +206,6 @@ const TopHeader = ({ page }) => {
             </div>
           </div>
         )}
-      </div>
-      <div className={showSidebar ? "lower1 lower" : "lower"}>
-        {user.role === "user" && (
-          <div
-            className={location.pathname === "/submitreport" ? "active" : ""}
-          >
-            <Link to="/submitreport">
-              <CgNotes /> Submit Report
-            </Link>
-          </div>
-        )}
-        {user.role === "admin" && (
-          <div>
-            <Link to="/admin/dashboard">
-              <MdOutlineDashboard /> Dashboard
-            </Link>
-          </div>
-        )}
-        <div className={location.pathname === "/profile" ? "active" : ""}>
-          <Link to="/profile">
-            <MdSwitchAccount /> Profile
-          </Link>
-        </div>
-        <div>
-          <Link to="/">
-            <BiHomeAlt /> Home
-          </Link>
-        </div>
-
-        {user.role === "user" && (
-          <>
-            <div>
-              <Link to="/missingreport">
-                <MdOutlineReportGmailerrorred /> Report Missing Person
-              </Link>
-            </div>
-            <div>
-              <Link to="/foundmissing">
-                <CgSearchFound /> Report Found Person
-              </Link>
-            </div>
-          </>
-        )}
-        {user.role === "user" && (
-          <div
-            className={
-              page === "viewreport" || location.pathname === "/allreports"
-                ? "active"
-                : ""
-            }
-          >
-            <Link to="/allreports">
-              <MdCallMade /> All Reports
-            </Link>
-          </div>
-        )}
-        <div className={location.pathname === "/notifications" ? "active" : ""}>
-          <Link to="/notifications">
-            <MdNotifications /> Notifications
-          </Link>
-        </div>
       </div>
     </div>
   );
