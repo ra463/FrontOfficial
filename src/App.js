@@ -58,14 +58,14 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route
           path="/signup"
-          element={!isAuthenticated ? <Register /> : <Navigate to="/profile" />}
+          element={!isAuthenticated ? <Register /> : <Navigate to="/" />}
         />
 
         <Route path="/activate/:token" element={<ActiveAccount />} />
 
         <Route
           path="/login"
-          element={!isAuthenticated ? <Login /> : <Navigate to="/profile" />}
+          element={!isAuthenticated ? <Login /> : <Navigate to="/" />}
         />
         <Route
           path="/profile"
