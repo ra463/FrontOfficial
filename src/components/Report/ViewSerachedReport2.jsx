@@ -13,7 +13,7 @@ const ViewSerachedReport2 = ({ setShowPopup2, history: result }) => {
             <HiArrowNarrowLeft style={{ fontSize: "1.4rem" }} />
           </div>
           <span>
-            {result.fullname} - {result.landmark ? "Found" : "Lost"} Report
+            {result?.fullname} - {result?.landmark ? "Found" : "Lost"} Report
           </span>
         </div>
         <div className="report_body scroll">
@@ -21,42 +21,42 @@ const ViewSerachedReport2 = ({ setShowPopup2, history: result }) => {
             <div className="grp">
               <div className="combine">
                 <p className="small">Name</p>
-                <div>{result.fullname}</div>
+                <div>{result?.fullname}</div>
               </div>
               <div className="combine">
                 <p className="small">Age</p>
-                <div>{result.age}</div>
+                <div>{result?.age}</div>
               </div>
             </div>
             <div className="grp">
               <div className="combine">
                 <p className="small">Gender</p>
-                <div>{result.gender}</div>
+                <div>{result?.gender}</div>
               </div>
               <div className="combine">
                 <p className="small">Height</p>
-                <div>{result.height}</div>
+                <div>{result?.height}</div>
               </div>
             </div>
             <div className="grp">
               <div className="combine">
                 <p className="small">city</p>
-                <div>{result.city}</div>
+                <div>{result?.city}</div>
               </div>
               <div className="combine">
                 <p className="small">state</p>
-                <div>{result.state}</div>
+                <div>{result?.state}</div>
               </div>
               <div className="combine">
                 <p className="small">Pincode</p>
-                <div>{result.pincode}</div>
+                <div>{result?.pincode}</div>
               </div>
             </div>
             <div className="grp">
-              {result.landmark && (
+              {result?.landmark && (
                 <div className="combine">
                   <p className="small">Landmark</p>
-                  <div>{result.landmark}</div>
+                  <div>{result?.landmark}</div>
                 </div>
               )}
               {result?.address && (
@@ -67,70 +67,70 @@ const ViewSerachedReport2 = ({ setShowPopup2, history: result }) => {
               )}
             </div>
             <div className="grp">
-              {result.foundDate && (
+              {result?.foundDate && (
                 <div className="combine">
                   <p className="small">Found Date</p>
-                  <div>{result.foundDate}</div>
+                  <div>{result?.foundDate}</div>
                 </div>
               )}
-              {result.foundTime && (
+              {result?.foundTime && (
                 <div className="combine">
                   <p className="small">Found Time</p>
-                  <div>{result.foundTime}</div>
+                  <div>{result?.foundTime}</div>
                 </div>
               )}
-              {result.incidentDate && (
+              {result?.incidentDate && (
                 <div className="combine">
                   <p className="small">Incident Date</p>
                   <div>{result?.incidentDate}</div>
                 </div>
               )}
-              {result.incidentTime && (
+              {result?.incidentTime && (
                 <div className="combine">
                   <p className="small">Incident Time</p>
-                  <div>{result.incidentTime}</div>
+                  <div>{result?.incidentTime}</div>
                 </div>
               )}
             </div>
             <div className="grp">
-              {result.foundPlace && (
+              {result?.foundPlace && (
                 <div className="combine">
                   <p className="small">Found Place</p>
-                  <div>{result.foundPlace}</div>
+                  <div>{result?.foundPlace}</div>
                 </div>
               )}
-              {result.mobileno && (
+              {result?.mobileno && (
                 <div className="combine">
                   <p className="small">Mobile Number</p>
-                  <div>{result.mobileno}</div>
+                  <div>{result?.mobileno}</div>
                 </div>
               )}
-              {result.adhaar && (
+              {result?.adhaar && (
                 <div className="combine">
                   <p className="small">Adhaar Number</p>
-                  <div>{result.adhaar}</div>
+                  <div>{result?.adhaar}</div>
                 </div>
               )}
             </div>
             <div className="grp">
-              {result.founddesc && (
+              {result?.founddesc && (
                 <div className="combine">
                   <p className="small">Description of Incident</p>
-                  <div>{result.founddesc}</div>
+                  <div>{result?.founddesc}</div>
                 </div>
               )}
-              {result.incidentdesc && (
+              {result?.incidentdesc && (
                 <div className="combine">
                   <p className="small">Incident Description</p>
-                  <div>{result.incidentdesc}</div>
+                  <div>{result?.incidentdesc}</div>
                 </div>
               )}
             </div>
           </div>
           <div className="second">
             <div className="img">
-              {result.picture && result.picture.length > 0 ? (
-                result.picture.map((pic, i) => (
+              {result?.picture && result?.picture.length > 0 ? (
+                result?.picture.map((pic, i) => (
                   <img key={i} src={pic?.url} alt="" />
                 ))
               ) : (
