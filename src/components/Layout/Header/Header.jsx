@@ -81,7 +81,7 @@ const Header = () => {
           </Link>
         )}
         {user?.role === "admin" && (
-          <Link to="/submitreport">
+          <Link to="/admin/dashboard">
             <p>Dashboard</p>
           </Link>
         )}
@@ -157,8 +157,13 @@ const Header = () => {
               <p>Feed</p>
             </Link>
             {user?.role === "user" && (
-              <Link to="/missingreport">
-                <p>Report Missing Person</p>
+              <Link to="/submitreport">
+                <p>Submit Report</p>
+              </Link>
+            )}
+            {user?.role === "admin" && (
+              <Link to="/admin/dashboard">
+                <p>Dashboard</p>
               </Link>
             )}
             {user ? (

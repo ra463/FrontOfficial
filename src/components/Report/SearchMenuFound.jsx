@@ -178,7 +178,7 @@ const SearchMenuFound = ({ setShowSerchMenu }) => {
                 {showPopup2 === true && (
                   <ViewSerachedReport2
                     setShowPopup2={setShowPopup2}
-                    result={history?.user}
+                    history={history}
                   />
                 )}
               </>
