@@ -339,14 +339,12 @@ const ViewFoundReport = () => {
                       >
                         Upload Images
                       </button>
-                    ) : (
-                      <button type="submit" disabled={loading}>
-                        {loading ? (
-                          <PulseLoader size="10px" color="white" />
-                        ) : (
-                          "Upload Images"
-                        )}
+                    ) : loading ? (
+                      <button className="load" type="submit" disabled={loading}>
+                        <PulseLoader size="10px" color="white" />
                       </button>
+                    ) : (
+                      <button type="submit">Upload Images</button>
                     )}
                   </form>
                 </div>

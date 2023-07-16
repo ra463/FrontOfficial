@@ -183,7 +183,15 @@
         }
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 1000px) {
+        .p_top {
+            .back {
+                margin-top: 3rem;
+            }
+        }
+    }
+
+    @media (max-width: 840px) {
         .p_top {
             .more_details {
                 .more_d {
@@ -247,8 +255,8 @@
                         margin-right: 10px;
                         margin-top: -8rem;
 
-                        .more{
-                            a{
+                        .more {
+                            a {
                                 margin: 0.3rem 1rem;
                             }
                         }

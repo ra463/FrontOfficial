@@ -539,15 +539,15 @@ function Report() {
                 )}
 
                 <div className="btn">
-                  <button disabled={loading} type="submit">
-                    {loading ? (
+                  {loading ? (
+                    <button disabled={loading} type="submit" className="load">
                       <PulseLoader size="10px" color="green" />
-                    ) : (
-                      "Next"
-                    )}
-                  </button>
+                    </button>
+                  ) : (
+                    <button type="submit">Next</button>
+                  )}
                   <button type="reset" onClick={handleChange}>
-                    {error ? setDisplay(0) : "Cancel"}
+                    Cancel
                   </button>
                 </div>
               </form>

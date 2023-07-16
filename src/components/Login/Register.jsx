@@ -18,14 +18,7 @@ const Register = () => {
 
   const loginHandler = (e) => {
     e.preventDefault();
-    dispatch(
-      register(
-        firstname,
-        lastname,
-        email,
-        password
-      )
-    );
+    dispatch(register(firstname, lastname, email, password));
   };
 
   useEffect(() => {
@@ -196,13 +189,19 @@ const Register = () => {
               </select>
             </div>
           </div> */}
-          <button
-            style={{ marginTop: "1.5rem" }}
-            type="submit"
-            disabled={loading}
-          >
-            {loading ? <PulseLoader color="#fff" size={5} /> : "Sign Up"}
-          </button>
+          {loading ? (
+            <button
+              className="load"
+              style={{ marginTop: "1.5rem" }}
+              type="submit"
+            >
+              <PulseLoader color="#fff" size={5} />
+            </button>
+          ) : (
+            <button style={{ marginTop: "1.5rem" }} type="submit">
+              Sign Up
+            </button>
+          )}
           <Link
             style={{
               display: "flex",

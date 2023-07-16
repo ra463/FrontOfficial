@@ -181,7 +181,8 @@ const FoundMissing = () => {
                   </>
                 ) : (
                   <p className="para_m" style={{ color: "darkorange" }}>
-                    Complete your Profile and verify your email to Submit the Report.
+                    Complete your Profile and verify your email to Submit the
+                    Report.
                   </p>
                 )}
               </div>
@@ -503,15 +504,15 @@ const FoundMissing = () => {
                 )}
 
                 <div className="btn">
-                  <button disabled={loading} type="submit">
-                    {loading ? (
+                  {loading ? (
+                    <button disabled={loading} type="submit" className="load">
                       <PulseLoader size="10px" color="green" />
-                    ) : (
-                      "Next"
-                    )}
-                  </button>
+                    </button>
+                  ) : (
+                    <button type="submit">Next</button>
+                  )}
                   <button type="reset" onClick={handleChange}>
-                    {error ? setDisplay(0) : "Cancel"}
+                    Cancel
                   </button>
                 </div>
               </form>

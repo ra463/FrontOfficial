@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState} from "react";
 import "./Sidebar.scss";
 import {
   MdCallMade,
@@ -15,20 +15,14 @@ import {
 } from "react-icons/cg";
 import { Link, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
-import useClickOutside from "../../utils/ClickOutSide";
 import { BiHomeAlt } from "react-icons/bi";
 
 const Sidebar = ({ page }) => {
   const { user } = useSelector((state) => state.user);
-  const close = useRef(null);
 
   const [showSidebar, setShowSidebar] = useState(true);
-  const [showMenu, setShowMenu] = useState(false);
   const location = useLocation();
 
-  useClickOutside(close, () => {
-    setShowMenu(false);
-  });
   return (
     <>
       <div
@@ -175,152 +169,6 @@ const Sidebar = ({ page }) => {
               <Link to="/notifications">
                 <MdNotifications /> Notifications
               </Link>
-            </div>
-          </div>
-        )}
-      </div>
-      <div className="sidebar_mob">
-        <div className="upper">
-          {showMenu ? (
-            <CgMenuLeftAlt onClick={() => setShowMenu(false)} />
-          ) : (
-            <CgMenuRightAlt onClick={() => setShowMenu(true)} />
-          )}
-        </div>
-        {!showMenu && (
-          <div className="lower">
-            {user.role === "user" && (
-              <div
-                className={
-                  location.pathname === "/submitreport" ? "active" : ""
-                }
-              >
-                <Link to="/submitreport">
-                  <CgNotes />
-                </Link>
-              </div>
-            )}
-            {user.role === "admin" && (
-              <div>
-                <Link to="/admin/dashboard">
-                  <MdOutlineDashboard />
-                </Link>
-              </div>
-            )}
-            <div className={location.pathname === "/profile" ? "active" : ""}>
-              <Link to="/profile">
-                <MdSwitchAccount />
-              </Link>
-            </div>
-            <div>
-              <Link to="/">
-                <BiHomeAlt />
-              </Link>
-            </div>
-
-            {user.role === "user" && (
-              <>
-                <div>
-                  <Link to="/missingreport">
-                    <MdOutlineReportGmailerrorred />
-                  </Link>
-                </div>
-                <div>
-                  <Link to="/foundmissing">
-                    <CgSearchFound />
-                  </Link>
-                </div>
-              </>
-            )}
-            {user.role === "user" && (
-              <div
-                className={
-                  page === "viewreport" || location.pathname === "/allreports"
-                    ? "active"
-                    : ""
-                }
-              >
-                <Link to="/allreports">
-                  <MdCallMade />
-                </Link>
-              </div>
-            )}
-            <div
-              className={location.pathname === "/notifications" ? "active" : ""}
-            >
-              <Link to="/notifications">
-                <MdNotifications />
-              </Link>
-            </div>
-          </div>
-        )}
-        {showMenu && (
-          <div className="box1" ref={close}>
-            <div className="lower2">
-              {user.role === "user" && (
-                <div
-                  className={
-                    location.pathname === "/submitreport" ? "active" : ""
-                  }
-                >
-                  <Link to="/submitreport">
-                    <CgNotes /> Submit Report
-                  </Link>
-                </div>
-              )}
-              {user.role === "admin" && (
-                <div>
-                  <Link to="/admin/dashboard">
-                    <MdOutlineDashboard /> Dashboard
-                  </Link>
-                </div>
-              )}
-              <div className={location.pathname === "/profile" ? "active" : ""}>
-                <Link to="/profile">
-                  <MdSwitchAccount /> Profile
-                </Link>
-              </div>
-              <div>
-                <Link to="/">
-                  <BiHomeAlt /> Home
-                </Link>
-              </div>
-              {user.role === "user" && (
-                <>
-                  <div>
-                    <Link to="/missingreport">
-                      <MdOutlineReportGmailerrorred /> Report Missing Person
-                    </Link>
-                  </div>
-                  <div>
-                    <Link to="/foundmissing">
-                      <CgSearchFound /> Report Found Person
-                    </Link>
-                  </div>
-                </>
-              )}
-              {user.role === "user" && (
-                <div
-                  className={
-                    page === "viewreport" || location.pathname === "/allreports"
-                      ? "active"
-                      : ""
-                  }
-                >
-                  <Link to="/allreports">
-                    <MdCallMade /> All Reports
-                  </Link>
-                </div>
-              )}
-              <div
-                className={
-                  location.pathname === "/notifications" ? "active" : ""
-                }
-              >
-                <Link to="/notifications">
-                  <MdNotifications /> Notifications
-                </Link>
-              </div>
             </div>
           </div>
         )}

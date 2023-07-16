@@ -72,9 +72,13 @@ const Login = () => {
               <p>Create an account?</p>
             </Link>
           </div>
-          <button type="submit">
-            {loading ? <PulseLoader color="#fff" size={5} /> : "Log In"}
-          </button>
+          {loading ? (
+            <button type="submit" className="load">
+              <PulseLoader color="#fff" size={5} />
+            </button>
+          ) : (
+            <button type="submit">Sign In</button>
+          )}
         </form>
       </div>
       <div className="background">

@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Source+Sans+Pro:wght@300;400&display=swap');
-*{
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Source+Sans+Pro:wght@300;400&display=swap");
+* {
   font-family: "Roboto", sans-serif;
   font-family: "Source Sans Pro", sans-serif;
   padding: 0;
@@ -25,7 +25,7 @@ a {
   border-radius: 5px;
 }
 
-.scroll1::-webkit-scrollbar{
+.scroll1::-webkit-scrollbar {
   width: 0;
 }
 
@@ -37,12 +37,19 @@ a {
   border-radius: 0;
 }
 
-.loading{
+.loading {
   height: 100vh;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.load {
+  pointer-events: none;
+  cursor: not-allowed;
+  user-select: none;
+  opacity: 0.7;
 }
 
 :root {

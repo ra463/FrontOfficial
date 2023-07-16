@@ -27,7 +27,7 @@ const UserProfile = () => {
                 <h3>
                   {user.firstname} {user.lastname}
                 </h3>
-                <p style={{ color: "lightslategray" }}>{user.username}</p>
+                <p style={{ color: "lightslategray" }}>@{user.username}</p>
                 <div className="more_i">
                   <div>
                     <p>Edit Profile</p>
