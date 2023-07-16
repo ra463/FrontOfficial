@@ -254,8 +254,10 @@
             .lower {
                 top: 3.1rem;
 
-                div::nth-child(1) {
-                    margin-top: 10px;
+                div{
+                    &:nth-child(1){
+                        margin-top: 10px;
+                    }
                 }
             }
 
