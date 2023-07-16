@@ -129,4 +129,14 @@
             }
         }
     }
+
+    @media (max-width: 450px) {
+        .report_box {
+            .report_header {
+                span {
+                    margin-left: 15px;
+                }
+            }
+        }
+    }
 }
