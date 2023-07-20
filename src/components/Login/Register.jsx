@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Login.scss";
 import { register } from "../../redux/actions/userActions";
 import PulseLoader from "react-spinners/PulseLoader";
 import toast from "react-hot-toast";
 
 const Register = () => {
-  const { error, message, loading } = useSelector((state) => state.user);
+  const { error, message, loading } = useSelector((state) => state.register);
 
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
@@ -15,10 +15,12 @@ const Register = () => {
   const [password, setPassword] = useState("");
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  const loginHandler = (e) => {
+  const loginHandler = async (e) => {
     e.preventDefault();
-    dispatch(register(firstname, lastname, email, password));
+    await dispatch(register(firstname, lastname, email, password));
+    navigate("/login");
   };
 
   useEffect(() => {
@@ -191,15 +193,23 @@ const Register = () => {
           </div> */}
           {loading ? (
             <button
-              className="load"
-              style={{ marginTop: "1.5rem" }}
               type="submit"
+              style={{
+                marginTop: "1.5rem",
+              }}
+              className="load btn"
             >
               <PulseLoader color="#fff" size={5} />
             </button>
           ) : (
-            <button style={{ marginTop: "1.5rem" }} type="submit">
-              Sign Up
+            <button
+              style={{
+                marginTop: "1.5rem",
+              }}
+              className="btn_a"
+              type="submit"
+            >
+              <span>Sign Up</span>
             </button>
           )}
           <Link

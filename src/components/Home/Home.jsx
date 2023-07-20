@@ -7,6 +7,7 @@ import axios from "axios";
 import { server } from "../../redux/store";
 import { toast } from "react-hot-toast";
 import PulseLoader from "react-spinners/PulseLoader";
+import Footer from "../Layout/Footer/Footer";
 
 const Home = () => {
   const { isAuthenticated, user } = useSelector((state) => state.user);
@@ -59,7 +60,7 @@ const Home = () => {
                 Please verify your email address to continue using our services.
                 If you have not received the verification email, please check
                 your spam folder or click the button below to resend the
-                verification email.
+                verification email.{" "}
                 <span style={{ color: "#ff5c35" }}>
                   You can Submit your report only when your profile is completed
                   & Email is verified.
@@ -168,6 +169,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

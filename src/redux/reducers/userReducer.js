@@ -1,6 +1,6 @@
 import { createReducer } from "@reduxjs/toolkit";
 
-export const userReducer = createReducer(
+export const userregisterReducer = createReducer(
   {},
   {
     registerRequest: (state) => {
@@ -8,8 +8,7 @@ export const userReducer = createReducer(
     },
     registerSuccess: (state, action) => {
       state.loading = false;
-      state.isAuthenticated = true;
-      state.user = action.payload.user;
+      state.isAuthenticated = false;
       state.message = action.payload.message;
     },
     registerFail: (state, action) => {
@@ -18,6 +17,19 @@ export const userReducer = createReducer(
       state.error = action.payload;
     },
 
+    clearError: (state) => {
+      state.error = null;
+    },
+
+    clearMessage: (state) => {
+      state.message = null;
+    },
+  }
+);
+
+export const userloginReducer = createReducer(
+  {},
+  {
     loginRequest: (state) => {
       state.loading = true;
     },

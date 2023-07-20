@@ -85,6 +85,34 @@ header {
     a {
       color: #2e475d;
       font-weight: bold;
+      position: relative;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      p {
+        svg {
+          transition: all 0.1s ease-in;
+          transform: translateY(1px);
+        }
+      }
+
+      .hover_links {
+        position: absolute;
+        width: 11.5rem;
+
+        .inner {
+          margin-top: 1rem;
+          border: 1px solid #434f5a;
+          border-radius: 3px;
+          background: white;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          padding: 0.5rem 1rem;
+        }
+      }
     }
 
     .login {
@@ -156,7 +184,7 @@ header {
     }
   }
 
-  .more_padding{
+  .more_padding {
     margin-top: 5rem;
   }
 }

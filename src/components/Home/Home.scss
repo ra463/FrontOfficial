@@ -14,10 +14,11 @@
         .warning {
             margin: 0 1rem;
             border-radius: 5px;
+            background: radial-gradient(circle at 10% 20%, rgb(0, 0, 0) 0%, rgb(64, 64, 64) 90.2%);
+            color: white;
             box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
             padding: 0.7rem 1rem;
             margin-bottom: 2rem;
-            border: 1px solid #ff5c35;
 
             .btn {
                 background-color: #ff5c35;
@@ -31,7 +32,6 @@
                 font-weight: bold;
                 margin-top: 10px;
                 font-size: 1.1rem;
-                box-shadow: 0 0 5px 0 #ff5c35;
             }
         }
 

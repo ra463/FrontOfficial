@@ -60,11 +60,11 @@
                     box-shadow: 0 0 10px #85b8ed;
                 }
             }
-            .address{
+            .address {
                 display: flex;
                 gap: 10px;
-                .year{
-                    .add-input{
+                .year {
+                    .add-input {
                         width: 10rem;
                     }
                 }
@@ -145,7 +145,35 @@
                     }
                 }
             }
-            button {
+            .btn_a {
+                outline: none;
+                border: none;
+                display: flex;
+                border-radius: 7px;
+                cursor: pointer;
+                transition: all 0.1s ease-in-out;
+
+                span {
+                    outline: none;
+                    border: none;
+                    width: 100%;
+                    padding: 0.7rem;
+                    border-radius: 7px;
+                    background: #ff5c35;
+                    color: white;
+                    transition: all 0.1s ease-in-out;
+                }
+
+                &:hover {
+                    border: 2px solid #ff5c35;
+
+                    span {
+                        margin: 0.15rem;
+                        padding: 0.45rem;
+                    }
+                }
+            }
+            .btn {
                 outline: none;
                 border: none;
                 padding: 0.7rem;

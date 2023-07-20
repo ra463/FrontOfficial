@@ -5,12 +5,14 @@ import "./Header.scss";
 import { useSelector } from "react-redux";
 import { AiOutlineMenu } from "react-icons/ai";
 import { MdOutlineClose } from "react-icons/md";
+import { RiArrowDownSLine } from "react-icons/ri";
 
 const Header = () => {
   const { user } = useSelector((state) => state.user);
   const [show, setShow] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [showMenu, setShowMenu] = useState(false);
+  const [hover, setHover] = useState(false);
 
   const controlNavbar = () => {
     if (typeof window !== "undefined") {
@@ -76,8 +78,35 @@ const Header = () => {
           <p>Feed</p>
         </Link>
         {user?.role === "user" && (
-          <Link to="/submitreport">
-            <p>Submit Report</p>
+          <Link
+            onMouseOver={() => setHover(true)}
+            onMouseLeave={() => setHover(false)}
+            to="/submitreport"
+          >
+            <p
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "3px",
+              }}
+            >
+              <span>Submit Report</span>{" "}
+              <RiArrowDownSLine
+                style={hover && { transform: "rotate(180deg)" }}
+              />
+            </p>
+            {hover && (
+              <div className="hover_links">
+                <div className="inner">
+                  <Link to="/admin/dashboard">
+                    <p>Missing Person Report</p>
+                  </Link>
+                  <Link to="/admin/dashboard">
+                    <p>Found Person Report</p>
+                  </Link>
+                </div>
+              </div>
+            )}
           </Link>
         )}
         {user?.role === "admin" && (

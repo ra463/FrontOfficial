@@ -9,7 +9,8 @@ import {
   logoutReducer,
   reSendReducer,
   updateRoleReducer,
-  userReducer,
+  userloginReducer,
+  userregisterReducer,
 } from "./reducers/userReducer";
 import {
   addMoreImageReducer,
@@ -37,7 +38,8 @@ import {
 
 const store = configureStore({
   reducer: {
-    user: userReducer,
+    register: userregisterReducer,
+    user: userloginReducer,
     completeInformation: completeProfileReducer,
     reportPerson: reportPersonReducer,
     allReport: getAllReportReducer,
@@ -71,6 +73,6 @@ const store = configureStore({
 
 export default store;
 
-export const server = "http://localhost:4000/api/v1";
+// export const server = "http://localhost:4000/api/v1";
 
-// export const server = "https://finderofficial.onrender.com/api/v1";
+export const server = "https://finderofficial.onrender.com/api/v1";

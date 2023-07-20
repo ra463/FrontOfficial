@@ -73,11 +73,13 @@ const Login = () => {
             </Link>
           </div>
           {loading ? (
-            <button type="submit" className="load">
+            <button type="submit" className="load btn">
               <PulseLoader color="#fff" size={5} />
             </button>
           ) : (
-            <button type="submit">Sign In</button>
+            <button className="btn_a" type="submit">
+              <span>Sign In</span>
+            </button>
           )}
         </form>
       </div>
