@@ -3,6 +3,7 @@
     color: white;
     margin: 0 1rem;
     padding: 1rem;
+    padding-top: 1.5rem;
     border-radius: 5px;
 
     .f_box {
@@ -140,6 +141,11 @@
                 gap: 10px;
             }
         }
+    }
+
+    @media (max-width:850px){
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
     }
 
     @media (max-width: 650px) {

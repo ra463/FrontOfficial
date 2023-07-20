@@ -106,9 +106,20 @@ const Home = () => {
               <h3>Create an Account</h3>
               <p>
                 You have to create an account in order to continue with this
-                website.
+                website. Then logIn to your account.
               </p>
-              <a href="/signup">SignUp</a>
+              {!isAuthenticated && <a href="/signup">SignUp</a>}
+            </div>
+            <div className="card">
+              <img
+                src="https://img.freepik.com/free-vector/authentication-concept-illustration_114360-2168.jpg?size=626&ext=jpg"
+                alt=""
+              />
+              <h3>Verify Details</h3>
+              <p>
+                After login verify your Email address and Complete your other
+                details in order to submit your reports.
+              </p>
             </div>
             <div className="card">
               <img
@@ -129,7 +140,7 @@ const Home = () => {
               <h3>Notified</h3>
               <p>
                 Once your report is submitted you will be notified by email and
-                we will keep you updated about your missing or found report.
+                we will keep you updated about your report.
               </p>
             </div>
           </div>
@@ -165,6 +176,65 @@ const Home = () => {
                 <path d="M325.3,157.5c-50-1.5-100,1.5-150,1.5c-2.3,0-3.6,1.2-4.2,2.8c-1.1,0.9-1.9,2.2-1.9,4c0,47.7,1.9,95.4,3.2,143c0.7,23.8,1.2,47.7,1.3,71.5c0.1,20.3-4.9,41.3-1.5,61.5c0.3,2.1,1.7,4.3,4,4.5c6.9,0.7,13.8-0.1,20.7-0.7c6.6-0.6,14-1.4,20.1,1.8c1.7,0.9,3.3,0.7,4.5,0c2.1,2.6,6.6,3.3,8.2-0.7c5.4-13.7,2.5-29.6,2-43.8c-0.6-20.1-2.4-41.2,1.1-61.1c1.3-7.4,2.4-13.9,2.1-21.5c-0.2-5.3-1.8-11.1,4.1-13.1c11.1-3.8,24.6-0.3,36-0.2c2.9,0,4.6-2.8,4.6-5.4c0.1-8.8,0.9-17.6,0.4-26.4c-0.4-6.8-1.6-17-8.8-20.2s-16.6-2.1-24.2-1.7c-6,0.3-12.1,1.1-18.1,1.5c0.3-11.6-1.3-23.2-1.7-34.9c7.3-0.1,14.6-0.5,21.9-1c9.4-0.6,18.9-2,28.3-1.9c14.5,0.2,30,1.6,43.9-3.3c1.6-0.6,2.6-1.7,3-2.9c2.4-0.3,4.8-2,4.8-5.2c0.1-14.5,1.4-29,1.5-43.5C330.6,159.1,327.8,157.5,325.3,157.5z M319.2,204c-0.4,0-0.8,0.1-1.2,0.3c-13.3,4.7-28.8,2.9-42.7,2.7c-8.9-0.1-18,1.3-26.9,1.9c-9.4,0.7-18.7,1-28.1,1.1c-4.8,0-5.6,5.5-3.1,8.3c0.3,13.6,2.9,27.2,1.5,40.7c-0.3,3.4,1.8,6,5.3,5.9c13.8-0.1,28.3-4.1,42-1.2c4.7,1,4.1,12.4,4.2,16c0.2,5.7-0.2,11.5-0.4,17.2c-11.4-0.6-23-2.4-34.1,0.9c-15.4,4.5-9.2,20.8-10.8,32.5c-0.6,4.4-1.8,8.7-2.5,13c-0.8,5.3-0.9,10.7-1.2,16.1c-0.7,11.6,0,23.2,0.3,34.8c0.2,8.2,0.5,16.3,0.9,24.5c0.3,6.4,0.9,13.7-0.7,20.2c-0.1-0.1-0.2-0.2-0.4-0.2c-12.4-6.5-26.5-1.4-39.8-1.7c-2.1-18.8,2.1-38.3,2.1-57.1c-0.1-23.8-0.6-47.7-1.3-71.5c-1.3-46.4-3.1-92.8-3.2-139.2c47.1-0.1,94.3-2.7,141.4-1.6C320.3,179.5,319.4,191.7,319.2,204z" />
               </svg>
               <p className="upper">FiNDER</p>
+            </div>
+          </div>
+        </div>
+        <div className="container5">
+          <div className="container4">
+            <h2>Report a Problem</h2>
+            <div
+              style={{
+                marginTop: "10px",
+              }}
+              className="para"
+            >
+              <span>
+                If you have any problem regarding this website or you have any
+                query then you can contact us by clicking the button below. You
+                can also help us to improve this website by giving your valuable
+                feedback.
+              </span>
+              <form>
+                <div className="col">
+                  <div className="input">
+                    <input required type="text" placeholder="Enter your Name" />
+                    <input
+                      required
+                      type="email"
+                      placeholder="Enter your Email"
+                    />
+                  </div>
+                  <textarea
+                    required
+                    placeholder="Enter your Message"
+                  ></textarea>
+                </div>
+                <button type="submit">
+                  <span>Submit</span>
+                </button>
+              </form>
+            </div>
+          </div>
+          <div className="container4">
+            <h2>Subscribe For Updates</h2>
+            <div
+              style={{
+                marginTop: "10px",
+              }}
+              className="para"
+            >
+              <span>
+                You can subscribe to our newsletter to get notified about the
+                new updates and features of this website. You wil get update of
+                the varoius reports submitted by the users in your area through
+                email.
+              </span>
+              <form action="">
+                <input required type="email" placeholder="Enter your Email" />
+                <button type="submit">
+                  <span>Submit</span>
+                </button>
+              </form>
             </div>
           </div>
         </div>

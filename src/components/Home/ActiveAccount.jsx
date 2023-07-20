@@ -113,7 +113,17 @@ const ActiveAccount = () => {
                 You have to create an account in order to continue with this
                 website.
               </p>
-              <a href="/signup">SignUp</a>
+            </div>
+            <div className="card">
+              <img
+                src="https://img.freepik.com/free-vector/authentication-concept-illustration_114360-2168.jpg?size=626&ext=jpg"
+                alt=""
+              />
+              <h3>Verify Details</h3>
+              <p>
+                After login verify your Email address and Complete your other
+                details in order to submit your reports.
+              </p>
             </div>
             <div className="card">
               <img
