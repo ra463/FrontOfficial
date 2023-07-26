@@ -1,6 +1,8 @@
 form {
     overflow: auto;
     max-height: 67vh;
+    background: var(--bg-primary);
+    color: var(--color-primary);
 }
 .d_body {
     .details_p {
@@ -8,7 +10,9 @@ form {
 
         input {
             width: 100%;
-            border: 1px solid rgb(214, 217, 220);
+            background: var(--bg-forth);
+            color: var(--color-primary);
+            border: 1px solid var(--color-border);
             outline: none;
 
             &:focus-within {

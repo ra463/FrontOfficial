@@ -139,48 +139,46 @@ const SearchMenuMissing = ({ setShowSerchMenu }) => {
           searchResult == "" &&
           displayhistory
             .slice()
-            .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+            .sort((a, b) => new Date(b?.createdAt) - new Date(a?.createdAt))
             .map((history, i) => (
-              <>
-                <div className="history" key={i}>
-                  <div
-                    className="search_card"
-                    onClick={() => setShowPopup2(true)}
-                  >
-                    <div className="upper">
-                      <div>
-                        <p>
-                          Name : <span>{history?.user.fullname}</span>
-                        </p>
-                        <p>
-                          Age : <span>{history?.user.age}</span>
-                        </p>
-                      </div>
-                      <div>
-                        <p>
-                          Gender : <span>{history?.user.gender}</span>
-                        </p>
-                        <p>
-                          Height : <span>{history?.user.height}</span>
-                        </p>
-                      </div>
+              <div className="history" key={i}>
+                <div
+                  className="search_card"
+                  onClick={() => setShowPopup2(true)}
+                >
+                  <div className="upper">
+                    <div>
+                      <p>
+                        Name : <span>{history?.user.fullname}</span>
+                      </p>
+                      <p>
+                        Age : <span>{history?.user.age}</span>
+                      </p>
+                    </div>
+                    <div>
+                      <p>
+                        Gender : <span>{history?.user.gender}</span>
+                      </p>
+                      <p>
+                        Height : <span>{history?.user.height}</span>
+                      </p>
                     </div>
                   </div>
-                  <div
-                    className="remove_bth"
-                    onClick={() => removeHistory(history?.user._id)}
-                  >
-                    <MdDeleteOutline style={{ cursor: "pointer" }} />
-                    <p style={{ cursor: "pointer" }}>Remove</p>
-                  </div>
-                  {showPopup2 === true && (
-                    <ViewSerachedReport2
-                      setShowPopup2={setShowPopup2}
-                      history={history}
-                    />
-                  )}
                 </div>
-              </>
+                <div
+                  className="remove_bth"
+                  onClick={() => removeHistory(history?.user._id)}
+                >
+                  <MdDeleteOutline style={{ cursor: "pointer" }} />
+                  <p style={{ cursor: "pointer" }}>Remove</p>
+                </div>
+                {showPopup2 === true && (
+                  <ViewSerachedReport2
+                    setShowPopup2={setShowPopup2}
+                    history={history}
+                  />
+                )}
+              </div>
             ))}
       </div>
 

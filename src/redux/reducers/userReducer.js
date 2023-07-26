@@ -142,6 +142,52 @@ export const logoutReducer = createReducer(
   }
 );
 
+export const getAllNotificationReducer = createReducer(
+  {},
+  {
+    getAllNotificationRequest: (state) => {
+      state.loading = true;
+    },
+    getAllNotificationSuccess: (state, action) => {
+      state.loading = false;
+      state.notifications = action.payload.notifications;
+    },
+    getAllNotificationFail: (state, action) => {
+      state.loading = false;
+      state.error = action.payload;
+    },
+    clearError: (state) => {
+      state.error = null;
+    },
+    clearMessage: (state) => {
+      state.message = null;
+    },
+  }
+);
+
+export const deleteNotificationReducer = createReducer(
+  {},
+  {
+    deleteNotificationRequest: (state) => {
+      state.loading = true;
+    },
+    deleteNotificationSuccess: (state, action) => {
+      state.loading = false;
+      state.message = action.payload.message;
+    },
+    deleteNotificationFail: (state, action) => {
+      state.loading = false;
+      state.error = action.payload;
+    },
+    clearError: (state) => {
+      state.error = null;
+    },
+    clearMessage: (state) => {
+      state.message = null;
+    },
+  }
+);
+
 export const completeProfileReducer = createReducer(
   {},
   {

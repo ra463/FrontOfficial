@@ -49,7 +49,7 @@ const Home = () => {
   }, [dispatch, message, error]);
 
   return (
-    <div>
+    <div className="main_h" >
       <Header />
       <div className="home">
         <div className="box">

@@ -77,7 +77,7 @@ const TopHeader = ({ page }) => {
           )}
           {user.role === "admin" && (
             <div>
-              <Link to="/admin/dashboard">
+              <Link to="/admin/0/dashboard">
                 <MdOutlineDashboard /> Dashboard
               </Link>
             </div>

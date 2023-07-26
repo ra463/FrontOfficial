@@ -12,7 +12,8 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        background: white;
+        background: var(--bg-primary);
+        color: var(--color-primary);
         border-radius: 10px;
         padding: 20px;
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
@@ -39,7 +40,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                background: var(--bg-third);
+                background: var(--bg-forth);
 
                 &:hover {
                     cursor: pointer;
@@ -76,7 +77,7 @@
                         }
                         div {
                             padding: 7.2px;
-                            border: 1px solid rgb(214, 217, 220);
+                            border: 1px solid var(--color-border);
                             cursor: text;
                         }
                     }

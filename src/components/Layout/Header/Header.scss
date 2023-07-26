@@ -63,6 +63,7 @@ header {
       input {
         outline: none;
         margin-left: 0.3rem;
+        color: var(--color-primary);
         border: none;
         background: transparent;
         font-size: 15px;
@@ -83,7 +84,7 @@ header {
     gap: 20px;
 
     a {
-      color: #2e475d;
+      color: var(--color-secondary);
       font-weight: bold;
       position: relative;
 
@@ -106,7 +107,7 @@ header {
           margin-top: 1rem;
           border: 1px solid #434f5a;
           border-radius: 3px;
-          background: white;
+          background: var(--bg-forth);
           display: flex;
           flex-direction: column;
           gap: 10px;

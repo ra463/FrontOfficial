@@ -1,5 +1,7 @@
 .report {
     padding: 4rem 5rem;
+    background: var(--bg-primary);
+    color: var(--color-primary);
     .report_head {
         display: flex;
         flex-direction: column;
@@ -142,8 +144,10 @@
 
                 input {
                     padding: 10px;
+                    background: var(--bg-forth);
+                    color: var(--color-primary);
                     outline: none;
-                    border: 1px solid rgb(199, 201, 203);
+                    border: 1px solid var(--color-border);
                     cursor: text;
 
                     &::placeholder {
@@ -167,9 +171,10 @@
                     }
                     select {
                         font-size: 0.8rem;
-                        color: rgb(146, 147, 147);
+                        background: var(--bg-forth);
+                        color: var(--color-primary);
                         padding: 10px;
-                        border: 1px solid rgb(214, 217, 220);
+                        border: 1px solid var(--color-border);
 
                         &:focus {
                             border: 1px solid #ff5c35;
@@ -220,7 +225,9 @@
                 textarea {
                     padding: 10px;
                     outline: none;
-                    border: 1px solid rgb(199, 201, 203);
+                    background: var(--bg-forth);
+                    color: var(--color-primary);
+                    border: 1px solid var(--color-border);
                     cursor: text;
                     min-height: 5rem;
                     resize: none;
@@ -335,7 +342,9 @@
             }
 
             .search_btn2 {
-                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), inset 0 0 0 0 var(--shadow-inset);
+                box-shadow:
+                    0 2px 5px rgba(0, 0, 0, 0.2),
+                    inset 0 0 0 0 var(--shadow-inset);
 
                 .search_head {
                     display: flex;
@@ -394,8 +403,7 @@
                         display: flex;
                         justify-content: space-between;
                         margin: 5px;
-                        // color: #68696a;
-                        color: blue;
+                        color: var(--color-blue);
 
                         h5 {
                             background: rgba(0, 0, 255, 0.13);
@@ -579,8 +587,8 @@
     }
 
     @media (max-width: 550px) {
-        .report_head{
-            h1{
+        .report_head {
+            h1 {
                 text-align: center;
             }
         }
@@ -614,9 +622,9 @@
     }
 
     @media (max-width: 415px) {
-        .fill_form{
-            .form_div{
-                h2{
+        .fill_form {
+            .form_div {
+                h2 {
                     padding: 0 0.5rem;
                 }
             }

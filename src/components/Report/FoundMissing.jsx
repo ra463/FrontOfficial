@@ -200,11 +200,7 @@ const FoundMissing = () => {
                   id=""
                   required
                   placeholder="Full Name of Lost Person"
-                  value={
-                    user.firstname && user.lastname
-                      ? `${user.firstname} ${user.lastname}`
-                      : ""
-                  }
+                  value={`${user?.firstname} ${user?.lastname}`}
                   readOnly
                 />
 
@@ -226,7 +222,7 @@ const FoundMissing = () => {
                       id=""
                       required
                       placeholder="Your Mobile Number"
-                      value={user.phone ? user.phone : ""}
+                      value={user?.phone}
                       readOnly
                     />
                   </div>
@@ -248,7 +244,7 @@ const FoundMissing = () => {
                       id=""
                       required
                       placeholder="XXXX-XXXX-XXXX"
-                      value={user.adhaar ? user.adhaar : ""}
+                      value={user?.adhaar}
                       readOnly
                     />
                   </div>
@@ -261,7 +257,7 @@ const FoundMissing = () => {
                   id=""
                   required
                   placeholder="Your Address"
-                  value={user.address ? user.address : ""}
+                  value={user?.address}
                   readOnly
                 />
 
@@ -274,7 +270,7 @@ const FoundMissing = () => {
                       id=""
                       required
                       placeholder="Your State"
-                      value={user.state ? user.state : ""}
+                      value={user?.state}
                       readOnly
                     />
                   </div>
@@ -287,7 +283,7 @@ const FoundMissing = () => {
                       id=""
                       required
                       placeholder="Your City"
-                      value={user.city ? user.city : ""}
+                      value={user?.city}
                       readOnly
                     />
                   </div>
@@ -300,7 +296,7 @@ const FoundMissing = () => {
                       id=""
                       required
                       placeholder="Your PinCode"
-                      value={user.pincode ? user.pincode : ""}
+                      value={user?.pincode}
                       readOnly
                     />
                   </div>

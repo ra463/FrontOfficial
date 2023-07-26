@@ -3,7 +3,8 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         .report_inner {
-            background-color: white;
+            background: var(--bg-primary);
+            color: var(--color-primary);
             padding: 10px 20px;
             border-radius: 5px;
             display: flex;

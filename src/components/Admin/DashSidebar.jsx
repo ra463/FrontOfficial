@@ -28,10 +28,10 @@ const DashSidebar = ({ show, setShow }) => {
           <div className="bottom">
             <div
               className={
-                location.pathname === "/admin/dashboard" ? "active" : ""
+                location.pathname === "/admin/0/dashboard" ? "active" : ""
               }
             >
-              <Link to="/admin/dashboard">
+              <Link to="/admin/0/dashboard">
                 <MdOutlineDashboard /> Dashboard
               </Link>
             </div>
@@ -42,37 +42,37 @@ const DashSidebar = ({ show, setShow }) => {
             </div>
             <div
               className={
-                location.pathname === "/admin/allmissingreports" ? "active" : ""
+                location.pathname === "/admin/0/allmissingreports" ? "active" : ""
               }
             >
-              <Link to="/admin/allmissingreports">
+              <Link to="/admin/0/allmissingreports">
                 <MdOutlineReportGmailerrorred /> Missing Report's
               </Link>
             </div>
             <div
               className={
-                location.pathname === "/admin/allfoundreports" ? "active" : ""
+                location.pathname === "/admin/0/allfoundreports" ? "active" : ""
               }
             >
-              <Link to="/admin/allfoundreports">
+              <Link to="/admin/0/allfoundreports">
                 <CgSearchFound /> Found Report's
               </Link>
             </div>
             <div
               className={
-                location.pathname === "/admin/allreports" ? "active" : ""
+                location.pathname === "/admin/0/allreports" ? "active" : ""
               }
             >
-              <Link to="/admin/allreports">
+              <Link to="/admin/0/allreports">
                 <CgNotes /> All Report's
               </Link>
             </div>
             <div
               className={
-                location.pathname === "/admin/allusers" ? "active" : ""
+                location.pathname === "/admin/0/allusers" ? "active" : ""
               }
             >
-              <Link to="/admin/allusers">
+              <Link to="/admin/0/allusers">
                 <FaUserFriends /> All User's
               </Link>
             </div>

@@ -1,13 +1,16 @@
+.main_h {
+    background: var(--bg-primary);
+    color: var(--color-primary);
+}
 .home {
     padding: 3rem;
     padding-top: 0;
     position: relative;
 
     .box {
-        min-height: 80vh;
+        min-height: 93.5vh;
         display: flex;
         flex-direction: column;
-        margin-top: 5rem;
         justify-content: center;
         align-items: center;
 
@@ -45,6 +48,7 @@
 
             .image {
                 img {
+                    border-radius: 5px;
                     margin-left: 2rem;
                     width: 13.6rem;
                     animation: imgAnimate 1s ease-in-out infinite alternate;
@@ -111,6 +115,7 @@
                 width: 17rem;
                 img {
                     margin: auto;
+                    border-radius: 5px;
                     width: 10rem;
                     height: 10rem;
                 }
@@ -195,8 +200,11 @@
                     margin-top: 10px;
                     display: flex;
                     flex-direction: column;
+                    background: transparent;
 
                     input {
+                        background: var(--bg-forth);
+                        color: var(--color-primary);
                         padding: 10px;
                         margin-bottom: 10px;
                         border: 1px solid lightslategray;
@@ -216,6 +224,8 @@
                             width: 100%;
                         }
                         textarea {
+                            background: var(--bg-forth);
+                        color: var(--color-primary);
                             padding: 10px;
                             border: 1px solid lightslategray;
                             border-radius: 5px;

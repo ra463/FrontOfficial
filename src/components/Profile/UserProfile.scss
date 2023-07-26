@@ -1,6 +1,8 @@
 .p {
     display: flex;
     flex-direction: row;
+    background: var(--bg-primary);
+    color: var(--color-primary);
 
     .p_top {
         padding-bottom: 1rem;
@@ -23,7 +25,8 @@
                 grid-template-columns: 1fr 3fr;
 
                 .more_p {
-                    background-color: white;
+                    background: var(--bg-primary);
+                    color: var(--color-primary);
                     padding: 10px 0;
                     border-radius: 5px;
                     display: flex;
@@ -32,7 +35,7 @@
                     align-items: center;
                     margin-top: -4rem;
                     margin-left: 2rem;
-                    border: 1px solid rgb(214, 217, 220);
+                    border: 1px solid var(--color-border);
 
                     img {
                         width: 100px;
@@ -45,13 +48,13 @@
                         display: flex;
                         width: 100%;
                         flex-direction: column;
-                        border-top: 1px solid rgb(214, 217, 220);
+                        border-top: 1px solid var(--color-border);
                         div {
                             display: flex;
                             justify-content: space-between;
                             align-items: center;
                             padding: 10px;
-                            border-bottom: 1px solid rgb(214, 217, 220);
+                            border-bottom: 1px solid var(--color-border);
                             cursor: pointer;
 
                             &:hover {
@@ -70,7 +73,7 @@
                             align-items: center;
                             font-weight: bold;
                             padding: 10px;
-                            border: 1px solid rgb(214, 217, 220);
+                            border: 1px solid var(--color-border);
                             border-radius: 3px;
                             cursor: pointer;
 
@@ -82,18 +85,17 @@
                 }
 
                 .details {
-                    background-color: white;
-                    // padding: 10px 0;
                     border-radius: 5px;
                     display: flex;
                     flex-direction: column;
-                    // justify-content: center;
                     align-items: center;
                     margin-top: -4rem;
                     margin-left: 2rem;
-                    border: 1px solid rgb(214, 217, 220);
+                    border: 1px solid var(--color-border);
 
                     .d_head {
+                        background: var(--bg-primary);
+                        color: var(--color-primary);
                         display: flex;
                         align-items: center;
                         margin-top: 0;
@@ -101,14 +103,15 @@
                         width: 100%;
                         padding: 10px;
                         border-bottom: 1px solid rgb(214, 217, 220);
+                        border-top-left-radius: 5px;
+                        border-top-right-radius: 5px;
                         font-weight: bold;
 
                         p {
                             font-size: 1.1rem;
                             cursor: pointer;
                             padding: 5px 8px;
-                            background: white;
-                            border: 1px solid rgb(214, 217, 220);
+                            border: 1px solid var(--color-border);
                             border-radius: 3px;
 
                             &:hover {
@@ -173,7 +176,8 @@
                             }
                             div {
                                 padding: 7.2px;
-                                border: 1px solid rgb(214, 217, 220);
+                                background: var(--bg-forth);
+                                border: 1px solid var(--color-border);
                                 cursor: text;
                             }
                         }

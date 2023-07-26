@@ -74,13 +74,12 @@
 
             &:hover {
                 cursor: pointer;
-
                 background: var(--bg-secondary);
             }
         }
         .dropdown {
             position: absolute;
-            background: white;
+            background: var(--bg-primary);
             right: 0;
             top: 53px;
             gap: 5px;
@@ -186,7 +185,6 @@
         position: fixed;
         top: 0;
         width: 100%;
-        background: white;
         .p_head_left {
             .svg {
                 display: block;
@@ -197,9 +195,10 @@
                 display: flex;
                 flex-direction: column;
                 font-size: 1.2rem;
-                background: white;
+                background: var(--bg-primary);
+                color: var(--color-primary);
                 font-weight: bold;
-                top: 2.95rem;
+                top: 2.8rem;
                 width: 20rem;
                 border-top: 1px solid rgba(112, 128, 144, 0.24);
                 transition: all 0.3s ease-in-out;
@@ -219,7 +218,6 @@
                     display: flex;
                     align-items: center;
                     border-radius: 3px;
-                    color: rgba(0, 0, 0, 0.776);
                     margin: 0 7px;
                     margin-bottom: 5px;
                     gap: 10px;
@@ -254,8 +252,8 @@
             .lower {
                 top: 3.1rem;
 
-                div{
-                    &:nth-child(1){
+                div {
+                    &:nth-child(1) {
                         margin-top: 10px;
                     }
                 }

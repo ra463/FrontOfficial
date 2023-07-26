@@ -116,6 +116,40 @@ export const logout = () => async (dispatch) => {
   }
 };
 
+export const AllNotification = () => async (dispatch) => {
+  try {
+    dispatch({ type: "getAllNotificationRequest" });
+
+    const { data } = await axios.get(`${server}/allnotification`, {
+      withCredentials: true,
+    });
+
+    dispatch({ type: "getAllNotificationSuccess", payload: data });
+  } catch (error) {
+    dispatch({
+      type: "getAllNotificationFail",
+      payload: error.response.data.message,
+    });
+  }
+};
+
+export const deleteNotification = (id) => async (dispatch) => {
+  try {
+    dispatch({ type: "deleteNotificationRequest" });
+
+    const { data } = await axios.delete(`${server}/deletenotification/${id}`, {
+      withCredentials: true,
+    });
+
+    dispatch({ type: "deleteNotificationSuccess", payload: data });
+  } catch (error) {
+    dispatch({
+      type: "deleteNotificationFail",
+      payload: error.response.data.message,
+    });
+  }
+};
+
 export const allMissingandFoundReport = () => async (dispatch) => {
   try {
     dispatch({ type: "getAllMissingandFoundReportRequest" });

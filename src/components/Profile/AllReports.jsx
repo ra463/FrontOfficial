@@ -74,13 +74,7 @@ const AllReports = () => {
                 {reports &&
                   reports?.length > 0 &&
                   reports.map((report, i) => (
-                    <div
-                      style={{
-                        boxShadow: "rgba(0, 0, 0, 0.11) 0px 1px 4px",
-                      }}
-                      className="repo"
-                      key={i}
-                    >
+                    <div className="repo" key={i}>
                       <div className="basic_d">
                         <p className="r_name">
                           Lost Person:{" "}
@@ -95,7 +89,6 @@ const AllReports = () => {
 
                         <div className="container">
                           <p>
-                            {/* Reported Date: {report?.createdAt?.split("T")[0]} */}
                             Reported Date:{" "}
                             <span
                               style={{
@@ -134,13 +127,7 @@ const AllReports = () => {
                 {foundreports &&
                   foundreports?.length > 0 &&
                   foundreports.map((report, i) => (
-                    <div
-                      style={{
-                        boxShadow: "rgba(0, 0, 0, 0.11) 0px 1px 4px",
-                      }}
-                      className="repo"
-                      key={i}
-                    >
+                    <div className="repo" key={i}>
                       <div className="basic_d">
                         <p className="r_name">
                           Found Person:{" "}

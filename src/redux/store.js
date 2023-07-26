@@ -2,8 +2,10 @@ import { configureStore } from "@reduxjs/toolkit";
 import {
   activateReducer,
   completeProfileReducer,
+  deleteNotificationReducer,
   deleteUserReducer,
   getAllMissingandFoundReportReducer,
+  getAllNotificationReducer,
   getAllUserReducer,
   getSingleUserReducer,
   logoutReducer,
@@ -68,11 +70,13 @@ const store = configureStore({
     updatestatus: updateStatusReducer,
     activate: activateReducer,
     resend: reSendReducer,
+    allnotification: getAllNotificationReducer,
+    deletenotification: deleteNotificationReducer,
   },
 });
 
 export default store;
 
-export const server = "http://localhost:4000/api/v1";
+// export const server = "http://localhost:4000/api/v1";
 
-// export const server = "https://finderofficial.onrender.com/api/v1";
+export const server = "https://finderofficial.onrender.com/api/v1";

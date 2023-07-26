@@ -6,6 +6,9 @@ import { useSelector } from "react-redux";
 import { AiOutlineMenu } from "react-icons/ai";
 import { MdOutlineClose } from "react-icons/md";
 import { RiArrowDownSLine } from "react-icons/ri";
+import { FiSun } from "react-icons/fi";
+import { BsMoonStars } from "react-icons/bs";
+import { useTheme } from "../../../context/ThemeContext";
 
 const Header = () => {
   const { user } = useSelector((state) => state.user);
@@ -13,6 +16,11 @@ const Header = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [showMenu, setShowMenu] = useState(false);
   const [hover, setHover] = useState(false);
+  const [darkMode, setDarkMode] = useTheme();
+
+  const handleMode = () => {
+    setDarkMode((prev) => (prev === "light" ? "dark" : "light"));
+  };
 
   const controlNavbar = () => {
     if (typeof window !== "undefined") {
@@ -74,7 +82,7 @@ const Header = () => {
         <Link to="/">
           <p>Home</p>
         </Link>
-        <Link to="/">
+        <Link to="/notifications">
           <p>Feed</p>
         </Link>
         {user?.role === "user" && (
@@ -98,10 +106,10 @@ const Header = () => {
             {hover && (
               <div className="hover_links">
                 <div className="inner">
-                  <Link to="/admin/dashboard">
+                  <Link to="/missingreport">
                     <p>Missing Person Report</p>
                   </Link>
-                  <Link to="/admin/dashboard">
+                  <Link to="/foundmissing">
                     <p>Found Person Report</p>
                   </Link>
                 </div>
@@ -110,7 +118,7 @@ const Header = () => {
           </Link>
         )}
         {user?.role === "admin" && (
-          <Link to="/admin/dashboard">
+          <Link to="/admin/0/dashboard">
             <p>Dashboard</p>
           </Link>
         )}
@@ -128,6 +136,9 @@ const Header = () => {
             </Link>
           </>
         )}
+        <div className="color_change" onClick={handleMode}>
+          {darkMode === "light" ? <BsMoonStars /> : <FiSun />}
+        </div>
         <i
           className="fa-solid fa-language"
           style={{
@@ -150,6 +161,9 @@ const Header = () => {
         </i>
       </div>
       <div className="menu">
+        <div className="color_change" onClick={handleMode}>
+          {darkMode === "light" ? <BsMoonStars /> : <FiSun />}
+        </div>
         <i
           className="fa-solid fa-language"
           style={{
@@ -182,7 +196,7 @@ const Header = () => {
             <Link onClick={() => setShowMenu(false)} to="/">
               <p>Home</p>
             </Link>
-            <Link onClick={() => setShowMenu(false)} to="/">
+            <Link onClick={() => setShowMenu(false)} to="/notifications">
               <p>Feed</p>
             </Link>
             {user?.role === "user" && (
@@ -191,7 +205,7 @@ const Header = () => {
               </Link>
             )}
             {user?.role === "admin" && (
-              <Link to="/admin/dashboard">
+              <Link to="/admin/0/dashboard">
                 <p>Dashboard</p>
               </Link>
             )}
