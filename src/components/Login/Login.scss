@@ -4,6 +4,8 @@
     height: 100vh;
 
     .login {
+        background: var(--bg-primary);
+        color: var(--color-primary);
         width: 50%;
         display: flex;
         height: 100vh;
@@ -52,12 +54,13 @@
                 outline: none;
                 border: 1px solid #b5c2d4;
                 padding: 0.7rem;
-                border-radius: 7px;
+                background: var(--bg-forth);
+                border-radius: 4px;
 
                 &:focus {
                     outline: none !important;
-                    border-color: #85b8ed;
-                    box-shadow: 0 0 10px #85b8ed;
+                    border-color: #ff5c35;
+                    box-shadow:0 0 4px #ff5c35;
                 }
             }
             .address {
@@ -126,7 +129,7 @@
                     text-decoration: underline;
                 }
                 margin: 0.5rem 0;
-                color: #4b10ff;
+                color: var(--color-blue);
             }
             .signup {
                 display: flex;
@@ -158,7 +161,7 @@
                     border: none;
                     width: 100%;
                     padding: 0.7rem;
-                    border-radius: 7px;
+                    border-radius: 4px;
                     background: #ff5c35;
                     color: white;
                     transition: all 0.1s ease-in-out;
@@ -166,6 +169,7 @@
 
                 &:hover {
                     border: 2px solid #ff5c35;
+                    background: var(--bg-primary);
 
                     span {
                         margin: 0.15rem;

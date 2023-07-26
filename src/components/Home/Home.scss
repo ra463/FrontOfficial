@@ -209,9 +209,14 @@
                         padding: 10px;
                         margin-bottom: 10px;
                         border: 1px solid lightslategray;
-                        border-radius: 5px;
+                        border-radius: 4px;
                         outline: none;
                         width: 100%;
+
+                        &:focus {
+                            outline: none !important;
+                            border-color: #ff5c35;
+                        }
                     }
 
                     .col {
@@ -226,15 +231,20 @@
                         }
                         textarea {
                             background: var(--bg-forth);
-                        color: var(--color-primary);
+                            color: var(--color-primary);
                             padding: 10px;
                             border: 1px solid lightslategray;
-                            border-radius: 5px;
+                            border-radius: 4px;
                             width: 100%;
                             outline: none;
                             resize: none;
                             height: 5.4rem;
                             overflow: auto;
+
+                            &:focus {
+                                outline: none !important;
+                                border-color: #ff5c35;
+                            }
                         }
                     }
 

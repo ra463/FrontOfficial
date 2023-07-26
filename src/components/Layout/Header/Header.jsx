@@ -19,7 +19,7 @@ const Header = () => {
   const [darkMode, setDarkMode] = useTheme();
 
   const handleMode = () => {
-    setDarkMode((prev) => (prev === "light" ? "dark" : "light"));
+    setDarkMode((prev) => (prev === "dark" ? "light" : "dark"));
   };
 
   const controlNavbar = () => {
@@ -82,9 +82,13 @@ const Header = () => {
         <Link to="/">
           <p>Home</p>
         </Link>
-        <Link to="/notifications">
-          <p>Feed</p>
-        </Link>
+        {user ? (
+          <Link to="/notifications">
+            <p>Feed</p>
+          </Link>
+        ) : (
+          <a href="#subscribe">Subscribe</a>
+        )}
         {user?.role === "user" && (
           <Link
             onMouseOver={() => setHover(true)}
