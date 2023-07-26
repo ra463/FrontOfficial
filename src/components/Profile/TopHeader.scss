@@ -3,6 +3,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: var(--bg-primary);
     height: 9vh;
 
     .p_head_left {
@@ -198,7 +199,7 @@
                 background: var(--bg-primary);
                 color: var(--color-primary);
                 font-weight: bold;
-                top: 2.8rem;
+                top: 2.95rem;
                 width: 20rem;
                 border-top: 1px solid rgba(112, 128, 144, 0.24);
                 transition: all 0.3s ease-in-out;
@@ -282,5 +283,14 @@
                 }
             }
         }
+    }
+
+    @media (max-width: 290px) {
+        .p_head_left {
+            p{
+                display: none;
+            }
+        }
+        
     }
 }

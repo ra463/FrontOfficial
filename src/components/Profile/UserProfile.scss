@@ -98,60 +98,45 @@
                         color: var(--color-primary);
                         display: flex;
                         align-items: center;
-                        margin-top: 0;
-                        gap: 15px;
                         width: 100%;
-                        padding: 10px;
                         border-bottom: 1px solid rgb(214, 217, 220);
                         border-top-left-radius: 5px;
                         border-top-right-radius: 5px;
                         font-weight: bold;
 
-                        p {
-                            font-size: 1.1rem;
-                            cursor: pointer;
-                            padding: 5px 8px;
-                            border: 1px solid var(--color-border);
-                            border-radius: 3px;
+                        .d_head_inner {
+                            display: flex;
+                            align-items: center;
+                            margin-top: 0;
+                            gap: 15px;
+                            width: 100%;
+                            padding: 10px;
 
-                            &:hover {
-                                background: rgba(240, 239, 239, 0.436);
-                            }
-                        }
-                        .button {
-                            border: none;
-                            color: #eeeeee;
-                            cursor: pointer;
-                            display: inline-block;
-                            padding: 5px 15px;
-                            text-align: center;
-                            text-decoration: none;
-                        }
-                        @keyframes glowing {
-                            0% {
-                                background-color: #2ba805;
-                                box-shadow: 0 0 3px #2ba805;
-                            }
-                            50% {
-                                background-color: #2c940d;
-                                box-shadow: 0 0 3px #2c940d;
-                            }
-                            100% {
-                                background-color: #2ba805;
-                                box-shadow: 0 0 3px #2ba805;
-                            }
-                        }
-                        .button {
-                            animation: glowing 1300ms infinite;
-                        }
+                            button {
+                                display: flex;
+                                font-size: 1.1rem;
+                                cursor: pointer;
+                                padding: 5px 8px;
+                                border: 1px solid var(--color-border);
+                                border-radius: 3px;
 
-                        .active {
-                            background: #ff5c35;
-                            color: white;
-                            border: none;
+                                &:hover {
+                                    background: rgba(240, 239, 239, 0.436);
+                                }
 
-                            &:hover {
+                                span {
+                                    width: max-content;
+                                }
+                            }
+
+                            .active {
                                 background: #ff5c35;
+                                color: white;
+                                border: none;
+
+                                &:hover {
+                                    background: #ff5c35;
+                                }
                             }
                         }
                     }
@@ -205,6 +190,8 @@
                     .more_p {
                         .more {
                             width: 100%;
+                            padding:10px;
+                            padding-bottom: 0;
                             a {
                                 justify-content: center;
                             }
@@ -269,10 +256,6 @@
                     .details {
                         margin-left: 10px;
                         margin-right: 10px;
-
-                        .d_head {
-                            overflow-x: auto;
-                        }
                     }
                 }
             }

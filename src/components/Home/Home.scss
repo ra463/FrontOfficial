@@ -8,7 +8,8 @@
     position: relative;
 
     .box {
-        min-height: 93.5vh;
+        min-height: 100vh;
+        padding-top: 3rem;
         display: flex;
         flex-direction: column;
         justify-content: center;

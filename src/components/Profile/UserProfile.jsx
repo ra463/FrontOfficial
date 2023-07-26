@@ -63,14 +63,23 @@ const UserProfile = () => {
                 {visible === 0 && (
                   <>
                     <div className="d_head">
-                      <p className={visible === 0 ? "active" : ""}>
-                        Account Details
-                      </p>
-                      <p onClick={() => setVisible(1)}>More Details</p>
-                      <p className="button" onClick={() => setVisible(2)}>
-                        Complete Profile
-                      </p>
-                      <p>Settings</p>
+                      <div className="d_head_inner">
+                        <button className={visible === 0 ? "active" : ""}>
+                          <span>Account Details</span>
+                        </button>
+                        <button onClick={() => setVisible(1)}>
+                          <span>More Details</span>
+                        </button>
+                        <button
+                          className="button"
+                          onClick={() => setVisible(2)}
+                        >
+                          <span>Complete Profile</span>
+                        </button>
+                        <button>
+                          <span>Settings</span>
+                        </button>
+                      </div>
                     </div>
                     <div className="d_body">
                       <div className="details_p">
@@ -117,16 +126,25 @@ const UserProfile = () => {
                 {visible === 1 && (
                   <>
                     <div className="d_head">
-                      <p onClick={() => setVisible(0)}>Account Details</p>
-                      <p className={visible === 1 ? "active" : ""}>
-                        More Details
-                      </p>
+                      <div className="d_head_inner">
+                        <button onClick={() => setVisible(0)}>
+                          <span>Account Details</span>
+                        </button>
+                        <button className={visible === 1 ? "active" : ""}>
+                          <span>More Details</span>
+                        </button>
 
-                      <p className="button" onClick={() => setVisible(2)}>
-                        Complete Profile
-                      </p>
+                        <button
+                          className="button"
+                          onClick={() => setVisible(2)}
+                        >
+                          <span>Complete Profile</span>
+                        </button>
 
-                      <p>Settings</p>
+                        <button>
+                          <span>Settings</span>
+                        </button>
+                      </div>
                     </div>
                     <div className="d_body">
                       <div className="details_p">
@@ -145,12 +163,20 @@ const UserProfile = () => {
                 {visible === 2 && (
                   <>
                     <div className="d_head">
-                      <p onClick={() => setVisible(0)}>Account Details</p>
-                      <p onClick={() => setVisible(1)}>More Details</p>
-                      <p className={visible === 2 ? "active" : ""}>
-                        Complete Profile
-                      </p>
-                      <p>Settings</p>
+                      <div className="d_head_inner">
+                        <button onClick={() => setVisible(0)}>
+                          <span>Account Details</span>
+                        </button>
+                        <button onClick={() => setVisible(1)}>
+                          <span>More Details</span>
+                        </button>
+                        <button className={visible === 2 ? "active" : ""}>
+                          <span>Complete Profile</span>
+                        </button>
+                        <button>
+                          <span>Settings</span>
+                        </button>
+                      </div>
                     </div>
                     <div style={{ width: "100%" }}>
                       <CompleteProfile />

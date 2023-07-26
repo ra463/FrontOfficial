@@ -26,11 +26,10 @@ import AllFoundReports from "./components/Admin/AllFoundReports";
 import AllMissingReports from "./components/Admin/AllMissingReports";
 import AllUsers from "./components/Admin/AllUsers";
 import ActiveAccount from "./components/Home/ActiveAccount";
-import { ClipLoader } from "react-spinners";
 import { useTheme } from "./context/ThemeContext";
 
 function App() {
-  const { isAuthenticated, message, error, user, loading } = useSelector(
+  const { isAuthenticated, message, error, user } = useSelector(
     (state) => state.user
   );
   const [darkMode] = useTheme();
@@ -57,127 +56,121 @@ function App() {
 
   return (
     <Router>
-      {loading ? (
-        <div className="loading">
-          <ClipLoader color="#ff5c35" size={150} />
-        </div>
-      ) : (
-        <div id={darkMode}>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route
-              path="/signup"
-              element={!isAuthenticated ? <Register /> : <Navigate to="/" />}
-            />
+      <div id={darkMode}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route
+            path="/signup"
+            element={!isAuthenticated ? <Register /> : <Navigate to="/" />}
+          />
 
-            <Route path="/activate/:token" element={<ActiveAccount />} />
+          <Route path="/activate/:token" element={<ActiveAccount />} />
 
-            <Route
-              path="/login"
-              element={!isAuthenticated ? <Login /> : <Navigate to="/" />}
-            />
-            <Route
-              path="/profile"
-              element={
-                isAuthenticated ? <UserProfile /> : <Navigate to="/login" />
-              }
-            />
-            <Route
-              path="/missingreport"
-              element={
-                isAuthenticated ? <MissingReport /> : <Navigate to="/login" />
-              }
-            />
-            <Route
-              path="/foundmissing"
-              element={
-                isAuthenticated ? <FoundMissing /> : <Navigate to="/login" />
-              }
-            />
-            <Route
-              path="/submitreport"
-              element={
-                isAuthenticated ? <ReportMenu /> : <Navigate to="/login" />
-              }
-            />
-            <Route
-              path="/allreports"
-              element={
-                isAuthenticated ? <AllReports /> : <Navigate to="/login" />
-              }
-            />
-            <Route
-              path="/allreports/lostpersonreport/:id"
-              element={
-                isAuthenticated ? <ViewReport /> : <Navigate to="/login" />
-              }
-            />
-            <Route
-              path="/allreports/foundpersonreport/:id"
-              element={
-                isAuthenticated ? <ViewFoundReport /> : <Navigate to="/login" />
-              }
-            />
-            <Route
-              path="/notifications"
-              element={
-                isAuthenticated ? <Notifications /> : <Navigate to="/login" />
-              }
-            />
-            <Route
-              path="/admin/0/dashboard"
-              element={
-                isAuthenticated && isAdmin ? (
-                  <Dashbord />
-                ) : (
-                  <Navigate to="/login" />
-                )
-              }
-            />
-            <Route
-              path="/admin/0/allreports"
-              element={
-                isAuthenticated && isAdmin ? (
-                  <AllAdminReports />
-                ) : (
-                  <Navigate to="/login" />
-                )
-              }
-            />
-            <Route
-              path="/admin/0/allfoundreports"
-              element={
-                isAuthenticated && isAdmin ? (
-                  <AllFoundReports />
-                ) : (
-                  <Navigate to="/login" />
-                )
-              }
-            />
-            <Route
-              path="/admin/0/allmissingreports"
-              element={
-                isAuthenticated && isAdmin ? (
-                  <AllMissingReports />
-                ) : (
-                  <Navigate to="/login" />
-                )
-              }
-            />
-            <Route
-              path="/admin/0/allusers"
-              element={
-                isAuthenticated && isAdmin ? (
-                  <AllUsers />
-                ) : (
-                  <Navigate to="/login" />
-                )
-              }
-            />
-          </Routes>
-          <Toaster />
-        </div>
-      )}
+          <Route
+            path="/login"
+            element={!isAuthenticated ? <Login /> : <Navigate to="/" />}
+          />
+          <Route
+            path="/profile"
+            element={
+              isAuthenticated ? <UserProfile /> : <Navigate to="/login" />
+            }
+          />
+          <Route
+            path="/missingreport"
+            element={
+              isAuthenticated ? <MissingReport /> : <Navigate to="/login" />
+            }
+          />
+          <Route
+            path="/foundmissing"
+            element={
+              isAuthenticated ? <FoundMissing /> : <Navigate to="/login" />
+            }
+          />
+          <Route
+            path="/submitreport"
+            element={
+              isAuthenticated ? <ReportMenu /> : <Navigate to="/login" />
+            }
+          />
+          <Route
+            path="/allreports"
+            element={
+              isAuthenticated ? <AllReports /> : <Navigate to="/login" />
+            }
+          />
+          <Route
+            path="/allreports/lostpersonreport/:id"
+            element={
+              isAuthenticated ? <ViewReport /> : <Navigate to="/login" />
+            }
+          />
+          <Route
+            path="/allreports/foundpersonreport/:id"
+            element={
+              isAuthenticated ? <ViewFoundReport /> : <Navigate to="/login" />
+            }
+          />
+          <Route
+            path="/notifications"
+            element={
+              isAuthenticated ? <Notifications /> : <Navigate to="/login" />
+            }
+          />
+          <Route
+            path="/admin/0/dashboard"
+            element={
+              isAuthenticated && isAdmin ? (
+                <Dashbord />
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
+          <Route
+            path="/admin/0/allreports"
+            element={
+              isAuthenticated && isAdmin ? (
+                <AllAdminReports />
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
+          <Route
+            path="/admin/0/allfoundreports"
+            element={
+              isAuthenticated && isAdmin ? (
+                <AllFoundReports />
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
+          <Route
+            path="/admin/0/allmissingreports"
+            element={
+              isAuthenticated && isAdmin ? (
+                <AllMissingReports />
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
+          <Route
+            path="/admin/0/allusers"
+            element={
+              isAuthenticated && isAdmin ? (
+                <AllUsers />
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
+        </Routes>
+        <Toaster />
+      </div>
     </Router>
   );
 }

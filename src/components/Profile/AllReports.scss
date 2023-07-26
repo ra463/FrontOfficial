@@ -97,4 +97,21 @@
             }
         }
     }
+
+    @media (max-width: 295px) {
+        .all_r {
+            .repo {
+                .link {
+                    flex-direction: column;
+                    margin-top: 5px;
+                    width: 100%;
+
+                    a {
+                        display: flex;
+                        justify-content: center;
+                    }
+                }
+            }
+        }
+    }
 }
