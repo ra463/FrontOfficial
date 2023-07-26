@@ -370,6 +370,12 @@
     }
 
     @media (max-width: 450px) {
+        .box {
+            .warning {
+                margin-bottom: 0rem;
+                margin-top: 2rem;
+            }
+        }
         .container5 {
             .container4 {
                 .para {
