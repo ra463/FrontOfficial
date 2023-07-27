@@ -37,7 +37,7 @@ function Report() {
   const [incidentdesc, setIncidentdesc] = useState("");
   const [picture, setPicture] = useState("");
   const [picturePrev, setPicturePrev] = useState("");
-  const genderValue = ["Specify Gender", "Male", "Female", "Custom"];
+  const genderValue = ["Male", "Female", "Custom"];
 
   const dispatch = useDispatch();
 
@@ -315,7 +315,7 @@ function Report() {
             <div className="form_div">
               <h2>Fill The Basic Details of Lost Person</h2>
 
-              <form className="scroll" onSubmit={submitHandler}>
+              <form className="scroll more_change" onSubmit={submitHandler}>
                 <p>Full Name</p>
                 <input
                   type="text"
@@ -348,6 +348,7 @@ function Report() {
                         value={gender}
                         onChange={(e) => setGender(e.target.value)}
                       >
+                        <option value="">Specify Gender</option>
                         {genderValue.map((value, index) => (
                           <option key={index} value={value}>
                             {value}

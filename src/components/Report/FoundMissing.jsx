@@ -34,7 +34,7 @@ const FoundMissing = () => {
   const [picturePrev, setPicturePrev] = useState("");
   const [options, setOptions] = useState("");
   const optionValue = ["Filter", "Name", "Age"];
-  const genderValue = ["Specify Gender", "Male", "Female", "Custom"];
+  const genderValue = ["Male", "Female", "Custom"];
 
   const dispatch = useDispatch();
 
@@ -347,6 +347,7 @@ const FoundMissing = () => {
                         value={gender}
                         onChange={(e) => setGender(e.target.value)}
                       >
+                        <option value="">Specify Gender</option>
                         {genderValue.map((value, index) => (
                           <option key={index} value={value}>
                             {value}

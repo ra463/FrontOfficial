@@ -21,7 +21,7 @@ const CompleteProfile = () => {
   const [adhaar, setAdhaar] = useState("");
   const [dob, setDob] = useState("");
   const [checked, setChecked] = useState(false);
-  const genderValue = ["Specify Gender", "Male", "Female", "Custom"];
+  const genderValue = ["Male", "Female", "Custom"];
 
   const dispatch = useDispatch();
 
@@ -77,13 +77,11 @@ const CompleteProfile = () => {
               id="gender"
               value={user.gender ? user.gender : gender}
               onChange={(e) => setGender(e.target.value)}
+              required
             >
+              <option value="">Specify Gender</option>
               {genderValue.map((value, index) => (
-                <option
-                  key={index}
-                  value={value}
-                  onChange={(e) => e.target.value}
-                >
+                <option key={index} value={value}>
                   {value}
                 </option>
               ))}
