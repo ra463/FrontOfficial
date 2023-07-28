@@ -45,6 +45,7 @@
             align-items: center;
             justify-content: center;
             -webkit-user-select: none;
+            user-select: none;
             gap: 30px;
 
             .image {
@@ -168,6 +169,7 @@
             }
             .upper {
                 -webkit-user-select: none;
+                user-select: none;
                 display: flex;
                 padding: 6.5px;
                 align-items: center;
@@ -285,6 +287,21 @@
         }
     }
 
+    @media (max-width: 950px) {
+        .container5 {
+            .container4 {
+                .para {
+                    form {
+                        .col {
+                            flex-direction: column;
+                            gap: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     @media (max-width: 850px) {
         padding-left: 0rem;
         padding-right: 0rem;
@@ -314,8 +331,6 @@
     }
 
     @media (max-width: 750px) {
-        padding-left: 0rem;
-        padding-right: 0rem;
         .box {
             .container {
                 .text {
@@ -328,6 +343,16 @@
         .container5 {
             display: flex;
             flex-direction: column;
+            .container4 {
+                .para {
+                    form {
+                        .col {
+                            flex-direction: row;
+                            gap: 10px;
+                        }
+                    }
+                }
+            }
         }
     }
 

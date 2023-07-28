@@ -37,6 +37,8 @@ import {
   searchMissingHistoryReducer,
   searchMissingPersonReducer,
 } from "./reducers/foundPersonReducer";
+import { subscribeUserReducer } from "./reducers/subscribeReducer";
+import { reportProReducer } from "./reducers/reportProblemReducer";
 
 const store = configureStore({
   reducer: {
@@ -72,11 +74,13 @@ const store = configureStore({
     resend: reSendReducer,
     allnotification: getAllNotificationReducer,
     deletenotification: deleteNotificationReducer,
+    subscribe: subscribeUserReducer,
+    reportproblem: reportProReducer,
   },
 });
 
 export default store;
 
-export const server = "http://localhost:4000/api/v1";
+// export const server = "http://localhost:4000/api/v1";
 
-// export const server = "https://finderofficial.onrender.com/api/v1";
+export const server = "https://finderofficial.onrender.com/api/v1";

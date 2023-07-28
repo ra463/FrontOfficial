@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../Layout/Header/Header";
 import { IoPerson } from "react-icons/io5";
 import "./Home.scss";
@@ -8,12 +8,45 @@ import { server } from "../../redux/store";
 import { toast } from "react-hot-toast";
 import PulseLoader from "react-spinners/PulseLoader";
 import Footer from "../Layout/Footer/Footer";
+import { reportProblemAction } from "../../redux/actions/reportProblemAction";
+import { subscribeUserAction } from "../../redux/actions/subscribeAction";
 
 const Home = () => {
   const { isAuthenticated, user } = useSelector((state) => state.user);
   const { message, error, loading } = useSelector((state) => state.resend);
+  const {
+    error: reporterror,
+    message: reportmsg,
+    loading: reportloading,
+  } = useSelector((state) => state.reportproblem);
+  const {
+    error: subscribeerror,
+    message: subscribemsg,
+    loading: subscribeloading,
+  } = useSelector((state) => state.subscribe);
 
   const dispatch = useDispatch();
+
+  const [email, setEmail] = useState("");
+  const [nameOfUser, setNameOfUser] = useState("");
+  const [text, setText] = useState("");
+  const [subscribeEmail, setSubscribeEmail] = useState("");
+  const [subscribeName, setSubscribeName] = useState("");
+
+  const reportProblemHandler = async (e) => {
+    e.preventDefault();
+    await dispatch(reportProblemAction(nameOfUser, email, text));
+    setEmail("");
+    setNameOfUser("");
+    setText("");
+  };
+
+  const subscribeHandler = async (e) => {
+    e.preventDefault();
+    await dispatch(subscribeUserAction(subscribeEmail, subscribeName));
+    setSubscribeEmail("");
+    setSubscribeName("");
+  };
 
   const reSendVerificationCode = async () => {
     try {
@@ -46,10 +79,36 @@ const Home = () => {
       toast.success(message);
       dispatch({ type: "clearMessage" });
     }
-  }, [dispatch, message, error]);
+    if (subscribeerror) {
+      toast.error(subscribeerror);
+      dispatch({ type: "clearError" });
+    }
+
+    if (subscribemsg) {
+      toast.success(subscribemsg);
+      dispatch({ type: "clearMessage" });
+    }
+    if (reporterror) {
+      toast.error(reporterror);
+      dispatch({ type: "clearError" });
+    }
+
+    if (reportmsg) {
+      toast.success(reportmsg);
+      dispatch({ type: "clearMessage" });
+    }
+  }, [
+    dispatch,
+    message,
+    error,
+    subscribeerror,
+    subscribemsg,
+    reportmsg,
+    reporterror,
+  ]);
 
   return (
-    <div className="main_h" >
+    <div className="main_h">
       <Header />
       <div className="home">
         <div className="box">
@@ -194,49 +253,85 @@ const Home = () => {
                 can also help us to improve this website by giving your valuable
                 feedback.
               </span>
-              <form>
+              <form onSubmit={reportProblemHandler}>
                 <div className="col">
                   <div className="input">
-                    <input required type="text" placeholder="Enter your Name" />
+                    <input
+                      required
+                      type="text"
+                      placeholder="John Doe"
+                      value={nameOfUser}
+                      onChange={(e) => setNameOfUser(e.target.value)}
+                    />
                     <input
                       required
                       type="email"
-                      placeholder="Enter your Email"
+                      placeholder="johndoe@gmail.com"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                     />
                   </div>
                   <textarea
                     required
-                    placeholder="Enter your Message"
+                    placeholder="Describe your Problem"
+                    value={text}
+                    onChange={(e) => setText(e.target.value)}
                   ></textarea>
                 </div>
                 <button type="submit">
-                  <span>Submit</span>
+                  {reportloading ? (
+                    <PulseLoader color="#fff" size={5} />
+                  ) : (
+                    <span>Submit</span>
+                  )}
                 </button>
               </form>
             </div>
           </div>
-          <div className="container4">
-            <h2>Subscribe For Updates</h2>
-            <div
-              style={{
-                marginTop: "10px",
-              }}
-              className="para"
-            >
-              <span>
-                You can subscribe to our newsletter to get notified about the
-                new updates and features of this website. You wil get update of
-                the varoius reports submitted by the users in your area through
-                email.
-              </span>
-              <form action="">
-                <input required type="email" placeholder="Enter your Email" />
-                <button type="submit">
-                  <span>Submit</span>
-                </button>
-              </form>
+          {!isAuthenticated && (
+            <div className="container4">
+              <h2>Subscribe For Updates</h2>
+              <div
+                style={{
+                  marginTop: "10px",
+                }}
+                className="para"
+              >
+                <span>
+                  You can subscribe to our newsletter to get notified about the
+                  new updates and features of this website. You wil get update
+                  of the varoius reports submitted by the users in your area
+                  through email.
+                </span>
+                <form onSubmit={subscribeHandler}>
+                  <input
+                    required
+                    type="text"
+                    placeholder="Rachit Patel"
+                    value={subscribeName}
+                    onChange={(e) => setSubscribeName(e.target.value)}
+                    style={{
+                      marginBottom: "0",
+                    }}
+                  />
+                  <input
+                    required
+                    type="email"
+                    placeholder="rachit@gmail.com"
+                    value={subscribeEmail}
+                    onChange={(e) => setSubscribeEmail(e.target.value)}
+                  />
+                  <button type="submit">
+                    {subscribeloading ? (
+                      <PulseLoader color="#fff" size={5} />
+                    ) : (
+                      <span>Submit</span>
+                    )}
+                  </button>
+                </form>
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
       <Footer />
