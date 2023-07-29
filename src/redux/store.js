@@ -4,15 +4,19 @@ import {
   completeProfileReducer,
   deleteNotificationReducer,
   deleteUserReducer,
+  findUserPasswordReducer,
   getAllMissingandFoundReportReducer,
   getAllNotificationReducer,
   getAllUserReducer,
   getSingleUserReducer,
   logoutReducer,
   reSendReducer,
+  resetPasswordReducer,
+  sendCodeReducer,
   updateRoleReducer,
   userloginReducer,
   userregisterReducer,
+  validateCodeReducer,
 } from "./reducers/userReducer";
 import {
   addMoreImageReducer,
@@ -76,6 +80,10 @@ const store = configureStore({
     deletenotification: deleteNotificationReducer,
     subscribe: subscribeUserReducer,
     reportproblem: reportProReducer,
+    forgot: findUserPasswordReducer,
+    sendcode: sendCodeReducer,
+    validatecode: validateCodeReducer,
+    resetpassword: resetPasswordReducer
   },
 });
 

@@ -142,6 +142,109 @@ export const logoutReducer = createReducer(
   }
 );
 
+export const findUserPasswordReducer = createReducer(
+  {},
+  {
+    findUserForgotPasswordRequest: (state) => {
+      state.loading = true;
+    },
+    findUserForgotPasswordSuccess: (state, action) => {
+      state.loading = false;
+      state.message = action.payload.message;
+    },
+    findUserForgotPasswordFail: (state, action) => {
+      state.loading = false;
+      state.error = action.payload;
+    },
+    sendCodeRequest: (state) => {
+      state.loading = true;
+    },
+    sendCodeSuccess: (state, action) => {
+      state.loading = false;
+      state.message = action.payload.message;
+    },
+    sendCodeFail: (state, action) => {
+      state.loading = false;
+      state.error = action.payload;
+    },
+    clearError: (state) => {
+      state.error = null;
+    },
+    clearMessage: (state) => {
+      state.message = null;
+    },
+  }
+);
+
+export const sendCodeReducer = createReducer(
+  {},
+  {
+    sendCodeRequest: (state) => {
+      state.loading = true;
+    },
+    sendCodeSuccess: (state, action) => {
+      state.loading = false;
+      state.message = action.payload.message;
+    },
+    sendCodeFail: (state, action) => {
+      state.loading = false;
+      state.error = action.payload;
+    },
+    clearError: (state) => {
+      state.error = null;
+    },
+    clearMessage: (state) => {
+      state.message = null;
+    },
+  }
+);
+
+export const validateCodeReducer = createReducer(
+  {},
+  {
+    validateCodeRequest: (state) => {
+      state.loading = true;
+    },
+    validateCodeSuccess: (state, action) => {
+      state.loading = false;
+      state.message = action.payload.message;
+    },
+    validateCodeFail: (state, action) => {
+      state.loading = false;
+      state.error = action.payload;
+    },
+    clearError: (state) => {
+      state.error = null;
+    },
+    clearMessage: (state) => {
+      state.message = null;
+    },
+  }
+);
+
+export const resetPasswordReducer = createReducer(
+  {},
+  {
+    resetPasswordRequest: (state) => {
+      state.loading = true;
+    },
+    resetPasswordSuccess: (state, action) => {
+      state.loading = false;
+      state.message = action.payload.message;
+    },
+    resetPasswordFail: (state, action) => {
+      state.loading = false;
+      state.error = action.payload;
+    },
+    clearError: (state) => {
+      state.error = null;
+    },
+    clearMessage: (state) => {
+      state.message = null;
+    },
+  }
+);
+
 export const getAllNotificationReducer = createReducer(
   {},
   {

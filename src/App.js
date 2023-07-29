@@ -27,6 +27,7 @@ import AllMissingReports from "./components/Admin/AllMissingReports";
 import AllUsers from "./components/Admin/AllUsers";
 import ActiveAccount from "./components/Home/ActiveAccount";
 import { useTheme } from "./context/ThemeContext";
+import ForgotPassword from "./components/EditDetails/ForgotPassword";
 
 function App() {
   const { isAuthenticated, message, error, user } = useSelector(
@@ -70,6 +71,9 @@ function App() {
             path="/login"
             element={!isAuthenticated ? <Login /> : <Navigate to="/" />}
           />
+
+          <Route path="/forgotpassword" element={<ForgotPassword />} />
+
           <Route
             path="/profile"
             element={

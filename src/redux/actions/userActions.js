@@ -116,6 +116,106 @@ export const logout = () => async (dispatch) => {
   }
 };
 
+export const findUserForgotPassword =
+  (email, setVisible, setUserInfo) => async (dispatch) => {
+    try {
+      dispatch({ type: "findUserForgotPasswordRequest" });
+
+      const { data } = await axios.post(
+        `${server}/finduserforgotpassword`,
+        { email },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          withCredentials: true,
+        }
+      );
+
+      dispatch({ type: "findUserForgotPasswordSuccess", payload: data });
+      setVisible(1);
+      setUserInfo(data);
+    } catch (error) {
+      dispatch({
+        type: "findUserForgotPasswordFail",
+        payload: error.response.data.message,
+      });
+    }
+  };
+
+export const sendCode =
+  (email, setVisible, setUserInfo) => async (dispatch) => {
+    try {
+      dispatch({ type: "sendCodeRequest" });
+
+      const { data } = await axios.post(
+        `${server}/sendforgotpasswordcode`,
+        { email },
+        {
+          withCredentials: true,
+        }
+      );
+
+      dispatch({ type: "sendCodeSuccess", payload: data });
+      setVisible(2);
+      setUserInfo(data);
+    } catch (error) {
+      dispatch({
+        type: "sendCodeFail",
+        payload: error.response.data.message,
+      });
+    }
+  };
+
+export const validateCode =
+  (email, code, setVisible, setUserInfo) => async (dispatch) => {
+    try {
+      dispatch({ type: "validateCodeRequest" });
+
+      const { data } = await axios.post(
+        `${server}/validateforgotpasswordcode`,
+        { email, code },
+        {
+          withCredentials: true,
+        }
+      );
+
+      dispatch({ type: "validateCodeSuccess", payload: data });
+      setVisible(3);
+      setUserInfo(data);
+    } catch (error) {
+      dispatch({
+        type: "validateCodeFail",
+        payload: error.response.data.message,
+      });
+    }
+  };
+
+export const resetPassword =
+  (email, password, confirmPassword) => async (dispatch) => {
+    try {
+      dispatch({ type: "validateCodeRequest" });
+
+      const { data } = await axios.post(
+        `${server}/resetpassword`,
+        { email, password, confirmPassword },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          withCredentials: true,
+        }
+      );
+
+      dispatch({ type: "validateCodeSuccess", payload: data });
+    } catch (error) {
+      dispatch({
+        type: "validateCodeFail",
+        payload: error.response.data.message,
+      });
+    }
+  };
+
 export const AllNotification = () => async (dispatch) => {
   try {
     dispatch({ type: "getAllNotificationRequest" });
