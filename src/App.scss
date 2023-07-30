@@ -61,20 +61,24 @@ a {
   --bg-primary: #242526;
   --bg-secondary: #2e2e2e;
   --bg-forth: #3a3b3c;
+  --bg-active: #4c4c4c;
   --color-primary: rgba(255, 255, 255, 0.811);
   --color-secondary: #5a83a6;
-  --color-blue: rgb(111, 111, 255);
-  --color-border: #909090;
+  --color-blue: #82c7ff;
+  --color-border1: #909090;
+  --color-border2: #909090;
 }
 
 :root {
   --bg-primary: #fff;
   --bg-secondary: #f0f2f5;
-  --color-secondary: #2e475d;
-  --color-blue: blue;
-  --color-border: #909090;
+  --bg-active: rgba(212, 212, 212, 0.258);
   --bg-third: #e4e6eb;
   --bg-forth: rgb(247, 247, 247);
+  --color-secondary: #2e475d;
+  --color-blue: blue;
+  --color-border1: rgba(147, 148, 149, 0.564);
+  --color-border2: white;
   --color-primary: #050505;
   --divider: #ced0d4;
   --dark-bg-primary: #18191a;

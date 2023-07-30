@@ -120,6 +120,7 @@
                     border-radius: 5px;
                     width: 10rem;
                     height: 10rem;
+                    margin-bottom: 10px;
                 }
                 a {
                     padding: 5px 10px;
@@ -211,7 +212,6 @@
                         padding: 10px;
                         margin-bottom: 10px;
                         border: 1px solid lightslategray;
-                        border-radius: 4px;
                         outline: none;
                         width: 100%;
 
@@ -236,7 +236,6 @@
                             color: var(--color-primary);
                             padding: 10px;
                             border: 1px solid lightslategray;
-                            border-radius: 4px;
                             width: 100%;
                             outline: none;
                             resize: none;
@@ -379,7 +378,7 @@
             .container {
                 display: flex;
                 margin-left: 1rem;
-                margin-right: 2rem;
+                margin-right: 1rem;
 
                 .image {
                     display: none;

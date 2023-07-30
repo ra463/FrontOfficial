@@ -2,7 +2,7 @@
     background: var(--bg-forth);
     color: var(--color-primary);
     height: 100vh;
-    border-right: 1px solid var(--color-border);
+    border-right: 1px solid var(--color-border1);
     width: 20rem;
 
     .upper {
@@ -14,7 +14,7 @@
         font-size: 2rem;
         font-weight: bold;
         color: #ff5c35;
-        border-bottom: 1px solid var(--color-border);
+        border-bottom: 1px solid var(--color-border1);
 
         svg {
             cursor: pointer;

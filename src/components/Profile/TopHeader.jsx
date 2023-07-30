@@ -138,7 +138,7 @@ const TopHeader = ({ page }) => {
           onClick={() => setShow((prev) => !prev)}
         >
           <img src={user.avatar?.url} alt="" />
-          <p style={{ color: "green" }}>
+          <p style={{ color: "green", fontWeight: "bold" }}>
             {user.firstname} {user.lastname}
           </p>
           {show === true ? (

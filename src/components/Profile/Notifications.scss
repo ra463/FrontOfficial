@@ -22,13 +22,14 @@
         }
         .all_n1 {
             box-shadow: rgba(0, 0, 0, 0.11) 0px 1px 4px;
+            border: 1px solid var(--color-border2);
             display: flex;
+            border-radius: 3px;
             padding: 0.5rem 1rem;
             justify-content: space-between;
             background: var(--bg-primary);
             color: var(--color-primary);
             align-items: flex-start;
-            border-radius: 3px;
             margin-top: 1rem;
 
             .basic_d {
@@ -79,18 +80,20 @@
                     }
 
                     &:nth-child(2) {
-                        border: 1px solid #1a73e8;
-                        color: #1a73e8;
+                        border: 1px solid var(--color-blue);
+                        color: var(--color-blue);
                     }
+
                     &:hover {
-                        background-color: rgba(245, 245, 245, 0.808);
+                        background: var(--bg-forth);
                     }
                 }
             }
         }
 
         .not_read {
-            border: 1px solid #ff5c35;
+            border: 1px solid var(--color-border2);
+            background: var(--bg-active);
 
             .basic_d {
                 .r_name {
@@ -102,8 +105,13 @@
                 .container_noti {
                     .r_msg {
                         font-size: 0.8rem;
-                        color: gray;
+                        color: var(--color-primary);
                     }
+                }
+            }
+            .link {
+                button {
+                    background: var(--bg-forth);
                 }
             }
         }
@@ -129,8 +137,8 @@
                 .link {
                     flex-direction: column;
                     align-items: center;
-                    
-                    button{
+
+                    button {
                         width: 100%;
                     }
                 }

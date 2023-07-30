@@ -12,8 +12,8 @@
             align-items: center;
             margin: 0 1rem;
             margin-top: -4rem;
-            border: 1px solid rgb(214, 217, 220);
-            box-shadow: 0 0 5px 0 rgb(214, 217, 220);
+            border: 1px solid var(--color-border2);
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
             h1 {
                 font-size: 1.8rem;
@@ -37,7 +37,7 @@
                 align-items: center;
                 padding: 10px;
                 font-weight: bold;
-                border: 1px solid rgb(214, 217, 220);
+                border: 1px solid var(--color-border1);
                 border-radius: 3px;
                 cursor: pointer;
                 width: 100%;

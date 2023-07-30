@@ -72,7 +72,10 @@ function App() {
             element={!isAuthenticated ? <Login /> : <Navigate to="/" />}
           />
 
-          <Route path="/forgotpassword" element={<ForgotPassword />} />
+          <Route
+            path="/forgotpassword"
+            element={!isAuthenticated && <ForgotPassword />}
+          />
 
           <Route
             path="/profile"

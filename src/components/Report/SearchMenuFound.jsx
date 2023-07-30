@@ -128,7 +128,7 @@ const SearchMenuFound = ({ setShowSerchMenu }) => {
       )}
 
       <div className="history_result">
-        {displayhistory2 && searchResult == "" && (
+        {displayhistory2 && searchPerson == "" && (
           <div className="search_history_header">
             <h5>Recent Searches</h5>
             <h5>
@@ -138,7 +138,7 @@ const SearchMenuFound = ({ setShowSerchMenu }) => {
           </div>
         )}
         {displayhistory2 &&
-          searchResult == "" &&
+          searchPerson == "" &&
           displayhistory2
             .slice()
             .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
