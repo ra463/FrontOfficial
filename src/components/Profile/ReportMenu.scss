@@ -2,6 +2,8 @@
     .report_d {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        background: var(--bg-forth);
+        
         .report_inner {
             background: var(--bg-primary);
             color: var(--color-primary);
