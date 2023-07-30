@@ -156,17 +156,6 @@ export const findUserPasswordReducer = createReducer(
       state.loading = false;
       state.error = action.payload;
     },
-    sendCodeRequest: (state) => {
-      state.loading = true;
-    },
-    sendCodeSuccess: (state, action) => {
-      state.loading = false;
-      state.message = action.payload.message;
-    },
-    sendCodeFail: (state, action) => {
-      state.loading = false;
-      state.error = action.payload;
-    },
     clearError: (state) => {
       state.error = null;
     },

@@ -156,7 +156,7 @@ const ForgotPassword = () => {
               {message && <p className="message">{message}</p>}
 
               <div className="forgot_btn">
-                <button type="submit">Cancel</button>
+                <button onClick={() => navigate("/login")}>Cancel</button>
                 {loading ? (
                   <button disabled={loading} className="load" type="submit">
                     <PulseLoader color="#fff" size={5} />
@@ -192,7 +192,7 @@ const ForgotPassword = () => {
               </div>
 
               <div className="forgot_btn">
-                <button type="submit">Cancel</button>
+                <button onClick={() => navigate("/login")}>Cancel</button>
                 {sendloading ? (
                   <button disabled={sendloading} className="load" type="submit">
                     <PulseLoader color="#fff" size={5} />
@@ -225,7 +225,7 @@ const ForgotPassword = () => {
               />
 
               <div className="forgot_btn">
-                <button type="submit">Cancel</button>
+                <button onClick={() => setVisible(1)}>Go Back</button>
                 {validateloading ? (
                   <button
                     disabled={validateloading}
@@ -265,7 +265,7 @@ const ForgotPassword = () => {
               />
 
               <div className="forgot_btn">
-                <button type="submit">Cancel</button>
+                <button onClick={() => navigate("/login")}>Cancel</button>
                 {resetloading ? (
                   <button
                     disabled={resetloading}

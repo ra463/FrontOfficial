@@ -194,7 +194,7 @@ export const validateCode =
 export const resetPassword =
   (email, password, confirmPassword) => async (dispatch) => {
     try {
-      dispatch({ type: "validateCodeRequest" });
+      dispatch({ type: "resetPasswordRequest" });
 
       const { data } = await axios.post(
         `${server}/resetpassword`,
@@ -207,10 +207,10 @@ export const resetPassword =
         }
       );
 
-      dispatch({ type: "validateCodeSuccess", payload: data });
+      dispatch({ type: "resetPasswordSuccess", payload: data });
     } catch (error) {
       dispatch({
-        type: "validateCodeFail",
+        type: "resetPasswordFail",
         payload: error.response.data.message,
       });
     }
