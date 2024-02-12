@@ -18,6 +18,22 @@ const ViewSerachedReport = ({ setShowPopup, result }) => {
           <div className="first">
             <div className="grp">
               <div className="combine">
+                <p className="small">Reported By</p>
+                <div>{`${result?.user?.firstname} ${result?.user?.lastname}`}</div>
+              </div>
+              <div className="combine">
+                <p className="small">Reporter Number</p>
+                <div>{result?.user?.phone}</div>
+              </div>
+            </div>
+            <div className="grp">
+              <div className="combine">
+                <p className="small">Reporter Address</p>
+                <div>{result?.user?.address}</div>
+              </div>
+            </div>
+            <div className="grp">
+              <div className="combine">
                 <p className="small">Name</p>
                 <div>{result?.fullname}</div>
               </div>

@@ -83,7 +83,7 @@ const store = configureStore({
     forgot: findUserPasswordReducer,
     sendcode: sendCodeReducer,
     validatecode: validateCodeReducer,
-    resetpassword: resetPasswordReducer
+    resetpassword: resetPasswordReducer,
   },
 });
 
